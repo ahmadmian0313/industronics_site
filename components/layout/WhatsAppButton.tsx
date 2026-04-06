@@ -1,0 +1,31 @@
+// components/layout/WhatsAppButton.tsx
+'use client'
+
+import { motion } from 'framer-motion'
+import { MessageCircle } from 'lucide-react'
+import { COMPANY } from '@/lib/constants'
+
+export function WhatsAppButton() {
+  return (
+    <motion.a
+      href={`https://wa.me/${COMPANY.whatsapp}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ delay: 1, type: 'spring', stiffness: 200 }}
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors group"
+      aria-label="Contact via WhatsApp"
+    >
+      <MessageCircle className="w-6 h-6 text-white" />
+      
+      {/* Pulse Animation */}
+      <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-25" />
+      
+      {/* Tooltip */}
+      <span className="absolute right-full mr-3 px-3 py-1.5 bg-dark text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+        Chat with us
+      </span>
+    </motion.a>
+  )
+}
