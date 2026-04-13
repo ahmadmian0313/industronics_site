@@ -9,9 +9,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dark text-white">
+    <footer className="text-white border-t border-white/5 shadow-2xl overflow-hidden"
+  style={{
+    background: 'linear-gradient(90deg, #7f8894 0%, #0b1a2e 40%, #0d2035 70%, #628488 100%)'
+  }}>
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-8x1 mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">

@@ -1,14 +1,8 @@
-// ============================================================
-// app/layout.tsx
-//
-// Navbar yahan hai — isliye SARI pages pe automatically show hoga
-// Kisi bhi page.tsx mein Navbar add karne ki zaroorat NAHI
-// ============================================================
-
 import type { Metadata } from 'next'
-import './globals.css'
+import './globals.css';
 import { Navbar } from '@/components/layout/Navbar'
-
+import {WhatsAppButton} from '@/components/layout/WhatsAppButton';
+import { Footer } from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'Industronics Engineering | Industrial Automation Pakistan',
   description: 'Pakistan based company providing PLC, SCADA, BMS, EPC & Automation services for 25+ years.',
@@ -21,16 +15,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0, backgroundColor: '#0a0f1a', color: 'white' }}>
-
-        {/* ✅ Navbar — shows on ALL pages automatically */}
+      <body className="bg-[#0a0f1a] text-white m-0 p-0 flex flex-col min-h-screen">
+        
+        {/* ✅ Navbar — shows on ALL pages */}
         <Navbar />
 
-        {/* Spacer — pushes content below fixed 68px header */}
-        <div style={{ height: 68 }} />
+        {/* Spacer for fixed header */}
+        <div className="h-[68px]" />
 
-        {/* Page content renders here */}
-        {children}
+        {/* Page content */}
+        <main className="flex-1">
+          {children}
+        </main>
+<WhatsAppButton />  
+        {/* Footer at bottom */}
+        <Footer /> 
 
       </body>
     </html>

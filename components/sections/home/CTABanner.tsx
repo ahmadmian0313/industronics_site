@@ -31,13 +31,13 @@ export function CTABanner() {
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2} className="flex flex-col sm:flex-row gap-4">
+          <AnimatedSection delay={0.2} className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-dark font-semibold rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20"
             >
               Contact Us
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-6 h-6" />
             </Link>
             <a
               href={`tel:${COMPANY.phone1}`}

@@ -13,14 +13,15 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+    
       {/* Hero */}
       <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary via-primary-dark to-dark overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10"> 
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.77) 1px, transparent 1px),
+                                linear-gradient(90deg, rgb(255, 255, 255) 1px, transparent 1px)`,
               backgroundSize: '50px 50px',
             }}
           />

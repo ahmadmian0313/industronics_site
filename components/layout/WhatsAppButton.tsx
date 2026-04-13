@@ -1,8 +1,7 @@
-// components/layout/WhatsAppButton.tsx
 'use client'
 
 import { motion } from 'framer-motion'
-import { MessageCircle } from 'lucide-react'
+import Image from 'next/image' // ✅ Image component import karein
 import { COMPANY } from '@/lib/constants'
 
 export function WhatsAppButton() {
@@ -14,16 +13,24 @@ export function WhatsAppButton() {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 200 }}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors group"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform group"
       aria-label="Contact via WhatsApp"
     >
-      <MessageCircle className="w-6 h-6 text-white" />
+      {/* ✅ Original WhatsApp Logo */}
+      <div className="relative w-8 h-8">
+        <Image 
+          src="/what.png" // ⚠️ Make sure file 'public' folder mein ho
+          alt="WhatsApp"
+          fill
+          className="object-contain"
+        />
+      </div>
       
       {/* Pulse Animation */}
-      <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-25" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" />
       
       {/* Tooltip */}
-      <span className="absolute right-full mr-3 px-3 py-1.5 bg-dark text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      <span className="absolute right-full mr-3 px-3 py-1.5 bg-slate-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
         Chat with us
       </span>
     </motion.a>

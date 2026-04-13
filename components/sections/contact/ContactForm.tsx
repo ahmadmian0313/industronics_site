@@ -1,4 +1,3 @@
-// components/sections/contact/ContactForm.tsx
 'use client'
 
 import { useState } from 'react'
@@ -65,18 +64,18 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   return (
     <AnimatedSection>
-      <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-        <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark mb-2">
+      <div className="bg-gradient-to-br from-[#111827] to-[#030712] p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-2">
           Send Us a Message
         </h3>
-        <p className="text-muted mb-8">
+        <p className="text-white/50 mb-8">
           Fill out the form below and our team will get back to you within 24 hours.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-dark mb-2">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm font-medium text-white/70 ml-1">
                 Full Name *
               </label>
               <input
@@ -86,12 +85,12 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                placeholder="Your name"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300"
+                placeholder="John Smith"
               />
             </div>
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-dark mb-2">
+            <div className="space-y-2">
+              <label htmlFor="company" className="text-sm font-medium text-white/70 ml-1">
                 Company Name
               </label>
               <input
@@ -100,15 +99,15 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300"
                 placeholder="Your company"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-dark mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium text-white/70 ml-1">
                 Email Address *
               </label>
               <input
@@ -118,12 +117,12 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300"
                 placeholder="you@company.com"
               />
             </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-dark mb-2">
+            <div className="space-y-2">
+              <label htmlFor="phone" className="text-sm font-medium text-white/70 ml-1">
                 Phone Number *
               </label>
               <input
@@ -133,14 +132,14 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300"
                 placeholder="+92 3XX XXXXXXX"
               />
             </div>
           </div>
 
-          <div>
-            <label htmlFor="service" className="block text-sm font-medium text-dark mb-2">
+          <div className="space-y-2">
+            <label htmlFor="service" className="text-sm font-medium text-white/70 ml-1">
               Service Interested In
             </label>
             <select
@@ -148,19 +147,19 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300 appearance-none cursor-pointer"
             >
-              <option value="">Select a service</option>
+              <option value="" className="bg-[#030712]">Select a service</option>
               {SERVICES.map((service) => (
-                <option key={service.slug} value={service.title}>
+                <option key={service.slug} value={service.title} className="bg-[#030712]">
                   {service.title}
                 </option>
               ))}
             </select>
           </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-dark mb-2">
+          <div className="space-y-2">
+            <label htmlFor="message" className="text-sm font-medium text-white/70 ml-1">
               Message *
             </label>
             <textarea
@@ -170,7 +169,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#167d82] focus:ring-1 focus:ring-[#167d82] transition-all duration-300 resize-none"
               placeholder="Tell us about your project requirements..."
             />
           </div>
@@ -179,9 +178,9 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-4 bg-green-50 text-green-700 rounded-lg"
+              className="flex items-center gap-2 p-4 bg-green-500/10 text-green-400 border border-green-500/20 rounded-xl"
             >
-              <CheckCircle className="w-5 h-5" />
+              <CheckCircle className="w-5 h-5 flex-shrink-0" />
               <span>Thank you! Your message has been sent successfully.</span>
             </motion.div>
           )}
@@ -190,9 +189,9 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-4 bg-red-50 text-red-700 rounded-lg"
+              className="flex items-center gap-2 p-4 bg-red-500/10 text-red-400 border border-red-500/20 rounded-xl"
             >
-              <AlertCircle className="w-5 h-5" />
+              <AlertCircle className="w-5 h-5 flex-shrink-0" />
               <span>Something went wrong. Please try again later.</span>
             </motion.div>
           )}
@@ -200,7 +199,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-[#167d82] hover:bg-[#126468] text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 group shadow-lg shadow-[#167d82]/20 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
@@ -210,7 +209,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
             ) : (
               <>
                 Send Message
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </>
             )}
           </button>
