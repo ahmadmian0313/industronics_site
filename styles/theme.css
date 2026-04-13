@@ -1,0 +1,13 @@
+:root {
+  --color-bg-body: #0a0f1a;
+  --color-bg-page: #0b181d;
+  --color-bg-hero: #1a1d1db9;
+  --color-bg-section: #cccccc;
+  --color-bg-card: #0d1520;
+  --color-primary: #167d82;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-subtle: #6b7280;
+  --font-base: 'Segoe UI', system-ui, sans-serif;
+  --space-container-max: 1200px;
+}

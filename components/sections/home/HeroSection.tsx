@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Play } from 'lucide-react'
 import { COMPANY } from '@/lib/constants'
@@ -116,9 +117,12 @@ export function HeroSection() {
             <div className="relative">
               {/* Main Image Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=700&fit=crop"
                   alt="Industrial Automation"
+                  width={600}
+                  height={700}
+                  unoptimized
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/50 to-transparent" />

@@ -6,6 +6,12 @@ import { Footer } from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'Industronics Engineering | Industrial Automation Pakistan',
   description: 'Pakistan based company providing PLC, SCADA, BMS, EPC & Automation services for 25+ years.',
+  metadataBase: new URL('https://industronics.uk'),
+  openGraph: {
+    title: 'Industronics Engineering | Industrial Automation Pakistan',
+    description: 'Pakistan based company providing PLC, SCADA, BMS, EPC & Automation services for 25+ years.',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({

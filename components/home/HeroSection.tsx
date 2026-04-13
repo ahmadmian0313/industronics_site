@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 // ── Slide data ───────────────────────────────────────────────
 // Images rakho: /public/images/automation.jpg etc.
@@ -83,9 +84,11 @@ export default function HeroSection() {
         }}>
 
           {/* ── IMAGE ── */}
-          <img
+          <Image
             src={slide.image}
             alt={slide.tag}
+            fill
+            unoptimized
             style={{
               position:       'absolute',
               inset:          0,
@@ -93,11 +96,8 @@ export default function HeroSection() {
               height:         '100%',
               objectFit:      'cover',
               objectPosition: 'center',
-              // Dark overlay baked into filter
               filter:         'brightness(0.38) saturate(1.2)',
             }}
-            // If image fails to load — CSS background shows automatically
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
 
           {/* ── CSS FALLBACK (shows if image missing) ── */}

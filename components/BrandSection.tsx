@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from 'next/image'
 
 const brands = [
   { name: "Siemens", logo: "/clients/1.png" },
@@ -84,17 +85,15 @@ const BrandSection = () => {
               {/* Double the list for Infinite effect */}
               {[...brands, ...brands, ...brands].map((brand, index) => (
                 <div key={index} style={{ flexShrink: 0 }}>
-                  <img 
-                    src={brand.logo} 
+                  <Image
+                    src={brand.logo}
                     alt={brand.name}
-                    style={{ 
-                      height: "50px", 
-                      width: "auto", 
-                    //   filter: "brightness(0) invert(1) opacity(0.7)", // Logos ko white/silver shade dene ke liye
-                    //   transition: "0.3s"
+                    width={120}
+                    height={50}
+                    style={{
+                      height: "50px",
+                      width: "auto",
                     }}
-                    // onMouseOver={(e) => e.currentTarget.style.filter = "brightness(1) opacity(1)"}
-                    // onMouseOut={(e) => e.currentTarget.style.filter = "brightness(1) invert(1) opacity(1)"}
                   />
                 </div>
               ))}

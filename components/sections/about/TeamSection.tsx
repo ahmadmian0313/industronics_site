@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
@@ -71,9 +72,12 @@ export function TeamSection({ team }: TeamSectionProps) {
                 className="bg-background rounded-xl overflow-hidden border border-gray-100 group"
               >
                 <div className="aspect-square relative overflow-hidden">
-                  <img
+                  <Image
                     src={member.image?.asset?.url || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop'}
                     alt={member.name}
+                    width={300}
+                    height={300}
+                    unoptimized
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

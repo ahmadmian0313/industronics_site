@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { COMPANY } from '@/lib/constants'
 
@@ -44,9 +45,12 @@ export function AboutHero() {
             className="relative"
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=500&fit=crop"
                 alt="Industronics Engineering Team"
+                width={600}
+                height={500}
+                unoptimized
                 className="w-full h-[400px] object-cover"
               />
             </div>

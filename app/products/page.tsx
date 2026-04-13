@@ -67,12 +67,12 @@ export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   return (
-    <main className="min-h-screen bg-[#060b13] relative overflow-hidden text-white">
+    <main className="min-h-screen bg-[linear-gradient(145deg,#080808_0%,#17181b_45%,#2a2c31_100%)] relative overflow-hidden text-white">
       
       {/* ── ANTIGRAVITY AURORA BACKGROUND ── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#167d82]/10 blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-white/5 blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full" />
         <div className="absolute inset-0 opacity-[0.05]" 
           style={{ backgroundImage: `linear-gradient(90deg, #fff 1px, transparent 1px), linear-gradient(0deg, #000000 1px, transparent 1px)`, backgroundSize: '50px 50px' }} 
         />
@@ -99,17 +99,17 @@ export default function ProductsPage() {
 
         {/* ── CATEGORIES (24 Sectors) ── */}
         <section className="mb-32">
-          <h2 className="text-[#167d82] text-sm font-bold uppercase tracking-[0.5em] mb-12 border-l-4 border-[#167d82] pl-6">
+          <h2 className="text-[#c8cdd4] text-sm font-bold uppercase tracking-[0.5em] mb-12 border-l-4 border-[#c8cdd4] pl-6">
             Industrial Sectors (24)
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {CATEGORIES_LIST.map((cat, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ y: -5, backgroundColor: 'rgba(22, 125, 130, 0.15)', borderColor: '#167d82' }}
-                className="bg-[#0a121e]/40 border border-white/5 p-6 rounded-2xl flex flex-col items-center text-center cursor-pointer transition-all group backdrop-blur-sm"
+                whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.09)', borderColor: '#d3d7de' }}
+                className="bg-[#121315]/70 border border-white/10 p-6 rounded-2xl flex flex-col items-center text-center cursor-pointer transition-all group backdrop-blur-sm"
               >
-                <div className="text-[#167d82] mb-4 group-hover:scale-125 transition-transform duration-500">
+                <div className="text-[#d0d4db] mb-4 group-hover:scale-125 transition-transform duration-500">
                   {React.cloneElement(cat.icon as React.ReactElement, { size: 30 })}
                 </div>
                 <h3 className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-tight group-hover:text-white">
@@ -122,7 +122,7 @@ export default function ProductsPage() {
 
         {/* ── PRODUCTS (20 Items) ── */}
         <section className="mb-40">
-          <h2 className="text-[#167d82] text-sm font-bold uppercase tracking-[0.5em] mb-12 border-l-4 border-[#167d82] pl-6">
+          <h2 className="text-[#c8cdd4] text-sm font-bold uppercase tracking-[0.5em] mb-12 border-l-4 border-[#c8cdd4] pl-6">
             Featured Components
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
@@ -131,13 +131,13 @@ export default function ProductsPage() {
                 key={prod.id}
                 onClick={() => setSelectedProduct(prod)}
                 whileHover={{ scale: 1.03 }}
-                className="bg-[#0a121e] border border-[#167d82]/20 hover:border-[#167d82] p-6 rounded-2xl cursor-pointer transition-all flex items-center gap-5 group"
+                className="bg-[#121315] border border-white/15 hover:border-[#d8dde4] p-6 rounded-2xl cursor-pointer transition-all flex items-center gap-5 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#167d82]/10 flex items-center justify-center text-[#167d82] group-hover:bg-[#167d82] group-hover:text-white transition-all shadow-lg">
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-[#d1d6dd] group-hover:bg-[#d1d6dd] group-hover:text-[#111214] transition-all shadow-lg">
                   {React.cloneElement(prod.icon as React.ReactElement, { size: 20 })}
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-white font-mono text-[12px] font-bold tracking-tighter uppercase group-hover:text-[#167d82] transition-colors">
+                  <span className="text-white font-mono text-[12px] font-bold tracking-tighter uppercase group-hover:text-[#d7dbe2] transition-colors">
                     {prod.name}
                   </span>
                   <span className="text-white/20 text-[9px] font-black tracking-widest uppercase">Verified Spec</span>

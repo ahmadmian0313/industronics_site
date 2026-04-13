@@ -1,16 +1,17 @@
 // components/sections/about/CoreValues.tsx
 'use client'
 
-import { Star, Lightbulb, Shield, Handshake } from 'lucide-react'
+import type { ElementType } from 'react'
+import { Star, Lightbulb, Shield, Users } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { CORE_VALUES } from '@/lib/constants'
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   Star,
   Lightbulb,
   Shield,
-  Handshake,
+  Handshake: Users,
 }
 
 export function CoreValues() {

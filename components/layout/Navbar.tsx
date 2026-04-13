@@ -19,21 +19,15 @@ const CERTIFICATIONS = [
 ]
 
 const ABOUT_ITEMS = [
-  { title: 'Board of Directors', desc: 'Stewards of vision, integrity, and long-term growth',          icon: '🏛️', href: '/about/board'       },
-  { title: 'Management Team',   desc: 'Pioneering the architecture of modern industrial automation',   icon: '👥', href: '/about/management'  },
-  { title: 'News & Media',      desc: 'Innovation, progress, and insight from across Industronics',    icon: '📰', href: '/about/news'        },
-  { title: 'Investors',         desc: 'Driving sustainable value through strategic growth',            icon: '📈', href: '/about/investors'   },
-  { title: 'Careers',           desc: 'Join the people powering Pakistan\'s industrial future',        icon: '💼', href: '/careers'           },
-  { title: 'Certifications',    desc: 'ISO, UKAS, PEC, PSEB certified — 25+ years of excellence',     icon: '🏆', href: '/about/certifications' },
+  { title: 'About Company', desc: 'Our company profile, history, and engineering values.', icon: '🏢', href: '/about' },
+  { title: 'Board of Directors', desc: 'Stewards of vision, integrity, and long-term growth.', icon: '🏛️', href: '/about/board' },
+  { title: 'Management Team', desc: 'Execution-focused structure across all operational levels.', icon: '👥', href: '/about/management' },
 ]
 
 const ABOUT_SIDEBAR = [
-  { label: 'Overview',          href: '/about'                  },
-  { label: 'Board of Directors',href: '/about/board'            },
-  { label: 'Management Team',   href: '/about/management'       },
-  { label: 'News & Media',      href: '/about/news'             },
-  { label: 'Investors',         href: '/about/investors'        },
-  { label: 'Careers',           href: '/careers'                },
+  { label: 'About Company', href: '/about' },
+  { label: 'Board of Directors', href: '/about/board' },
+  { label: 'Management Team', href: '/about/management' },
 ]
 
 const NAV_LINKS = [
@@ -124,7 +118,7 @@ export function Navbar() {
         top: 0, left: 0, right: 0,
         zIndex:      1000,
         width:       '100%',
-        background:  'linear-gradient(90deg, #f7f7f7  0%, #0b1a2e 40%, #0d2035 70%, #ffffff 100%)',
+        background:  'linear-gradient(90deg, #f5f5f5b6  0%, #0b1a2e 40%, #0d2035 70%, #f5f5f5b6)',
         borderBottom: '2px solid #167d82',
         boxShadow: scrolled
           ? '0 4px 32px rgba(22,125,130,0.4), 0 1px 0 rgba(22,125,130,0.2)'
@@ -202,7 +196,7 @@ export function Navbar() {
   </div>
 </Link>
           {/* ── NAV LINKS ── */}
-          <nav className="ie-nav" style={{ display:'flex', alignItems:'stretch', flex:1, justifyContent:'space-evenly' }}>
+          <nav className="ie-nav" style={{ display:'flex', alignItems:'stretch', flex:1, justifyContent:'center', gap: 4, paddingInline: 18 }}>
             {NAV_LINKS.map((item, idx) => {
 
               // ── CERTIFIED BY dropdown ──
@@ -335,7 +329,6 @@ export function Navbar() {
                               {/* Divider */}
                               <div style={{ height:1, background:'linear-gradient(90deg, rgba(22,125,130,0.5) 0%, transparent 80%)', marginBottom:20 }} />
 
-                              {/* 3×2 Cards Grid */}
                               <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
                                 {ABOUT_ITEMS.map((card, i) => (
                                   <Link
