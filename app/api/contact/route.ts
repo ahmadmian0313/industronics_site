@@ -6,7 +6,8 @@ export async function POST(request: NextRequest) {
   try {
     // Resend ko yahan initialize karo, top level pe nahi
     const { Resend } = await import('resend')
-    const resend = new Resend(process.env.RESEND_API_KEY)
+    // Is line ko change karein:
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_123');
 
     const body = await request.json()
     const { name, company, phone, email, service, message } = body
