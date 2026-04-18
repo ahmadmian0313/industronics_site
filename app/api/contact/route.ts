@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { COMPANY } from '@/lib/constants'
 
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key');
+const resendKey = process.env.RESEND_API_KEY || 're_123456789'; 
+const resend = new Resend(resendKey);
 
 export async function POST(request: NextRequest) {
   try {
