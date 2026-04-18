@@ -169,6 +169,7 @@ export default function SolutionsGrid() {
                      <span className="text-[10px] uppercase tracking-[0.2em] text-black mt-2 opacity-50 group-hover:opacity-100 transition-opacity">
   Click for details
 </span>
+
                       )}
                     </AnimatePresence>
 
