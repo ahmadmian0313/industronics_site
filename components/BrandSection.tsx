@@ -27,17 +27,17 @@ const BrandSection = () => {
       position: "relative" 
     }}>
       
-      <div style={{ maxWidth: "1700px", margin: "0 auto", position: "relative", zIndex: 25 }}>
+      <div style={{ maxWidth: "1900px", margin: "0 auto", position: "relative", zIndex: 25 }}>
         
         {/* Glass Container */}
         <div style={{
-          background: "linear-gradient(135deg, #000000 70%,  #e7e3e3 100%, #ffffff 100%)'",
+          background: "linear-gradient(135deg, #ffffff 70%,  #e7e3e3 100%, #ffffff 100%)'",
           backdropFilter: "blur(15px)",
           borderRadius: "30px",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
+          border: "1px solid rgb(255, 255, 255)",
           padding: "60px 40px",
           textAlign: "center",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+          boxShadow: "0 20px 40px rgb(255, 255, 255)"
         }}>
           
           {/* Heading */}

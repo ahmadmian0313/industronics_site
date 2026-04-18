@@ -29,8 +29,8 @@ const NAV_LINKS = [
   { label: 'Solutions',    href: '/solutions' },
   { label: 'Products',     href: '/products'  },
   { label: 'Careers',      href: '/careers'   },
-  { label: 'About Us',     href: '/about', isAbout: true },
   { label: 'Contact us',   href: '/contact'   },
+   { label: 'About Us',     href: '/about', isAbout: true },
 ]
 
 export function Navbar() {

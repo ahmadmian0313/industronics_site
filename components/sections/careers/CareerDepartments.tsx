@@ -38,13 +38,13 @@ export function CareerDepartments() {
         })).filter((item) => item.roles.length > 0)
 
         return (
-          <div key={department.name} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f0f10] to-[#171718] overflow-hidden">
+          <div key={department.name} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f0f10] to-[#167d82] overflow-hidden">
             <button onClick={() => setOpen(isOpen ? null : department.name)} className="w-full flex items-center justify-between px-6 py-5 text-left">
               <div>
                 <h3 className="text-xl font-semibold text-white">{department.name}</h3>
-                <p className="text-[#b7bcc5] text-sm mt-1">{department.roles.length} open positions</p>
+                <p className="text-[#ffff] text-sm mt-1">{department.roles.length} open positions</p>
               </div>
-              <span className="text-[#cfd2d8] text-2xl leading-none">{isOpen ? '−' : '+'}</span>
+              <span className="text-[#ffff] text-2xl leading-none">{isOpen ? '−' : '+'}</span>
             </button>
 
             <AnimatePresence initial={false}>
@@ -59,7 +59,7 @@ export function CareerDepartments() {
                             <div key={role.title} className="rounded-lg border border-white/10 bg-white/[0.03] p-4 hover:border-white/20 transition-colors">
                               <h5 className="text-white font-medium">{role.title}</h5>
                               <p className="text-white/70 text-sm mt-1">{role.description}</p>
-                              <button className="mt-3 px-4 py-2 rounded-lg border border-[#c7cbd2]/30 text-[#d9dde3] text-sm hover:bg-white/10 transition-colors">
+                              <button className="mt-3 px-4 py-2 rounded-lg border border-[#c7cbd2]/50 text-[#d9dde3] text-sm hover:bg-white/10 transition-colors">
                                 Apply
                               </button>
                             </div>

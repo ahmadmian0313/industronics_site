@@ -64,7 +64,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   return (
     <AnimatedSection>
-      <div className="bg-gradient-to-br from-[#111827] to-[#030712] p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <div className="bg-gradient-to-br from-[#0f0f10] to-[#167d82] p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
         <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-2">
           Send Us a Message
         </h3>

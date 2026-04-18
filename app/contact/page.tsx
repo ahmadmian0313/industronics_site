@@ -42,57 +42,70 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-10">
-            {/* Form */}
-            <div className="lg:col-span-3">
-              <ContactForm />
+ {/* Contact Form & Info Section */}
+<section 
+  className="py-10 md:py-10" 
+  style={{ 
+    background: "linear-gradient(135deg, #090909 0%, #e7e3e3 45%, #2a2d33 100%)" 
+  }}
+>
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="grid lg:grid-cols-5 gap-10">
+      
+      {/* 1. Form Section - Text color updated to dark */}
+      <div className="lg:col-span-3 text-slate-900">
+        <ContactForm />
+      </div>
+
+      {/* 2. Quick Contact Section */}
+      <div className="lg:col-span-2">
+        <AnimatedSection delay={0.2}>
+          {/* Card background remains Dark/Transparent to contrast with the light page background */}
+          <div className="bg-black/80 backdrop-blur-md rounded-2xl p-8 text-white h-full border border-white/10 shadow-2xl">
+            <h3 className="font-heading text-2xl font-semibold mb-6 text-white">
+              Quick Contact
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <div className="text-white/60 text-sm mb-1">Phone</div>
+                <a href={`tel:${COMPANY.phone1}`} className="text-lg font-medium hover:text-accent transition-colors text-white">
+                  {COMPANY.phone1}
+                </a>
+              </div>
+
+              <div>
+                <div className="text-white/60 text-sm mb-1">Email</div>
+                <a href={`mailto:${COMPANY.email}`} className="text-lg font-medium hover:text-accent transition-colors text-white">
+                  {COMPANY.email}
+                </a>
+              </div>
+
+              <div>
+                <div className="text-white/60 text-sm mb-1">WhatsApp</div>
+                <a
+                  href={`https://wa.me/${COMPANY.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-lg font-medium hover:text-accent transition-colors text-white"
+                >
+                  Click to Chat
+                </a>
+              </div>
             </div>
 
-            {/* Quick Contact */}
-            <div className="lg:col-span-2">
-              <AnimatedSection delay={0.2}>
-                <div className="bg-dark rounded-2xl p-8 text-white h-full">
-                  <h3 className="font-heading text-2xl font-semibold mb-6">
-                    Quick Contact
-                  </h3>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="text-white/60 text-sm mb-1">Phone</div>
-                      <a href={`tel:${COMPANY.phone1}`} className="text-lg font-medium hover:text-accent transition-colors">
-                        {COMPANY.phone1}
-                      </a>
-                    </div>
-                    <div>
-                      <div className="text-white/60 text-sm mb-1">Email</div>
-                      <a href={`mailto:${COMPANY.email}`} className="text-lg font-medium hover:text-accent transition-colors">
-                        {COMPANY.email}
-                      </a>
-                    </div>
-                    <div>
-                      <div className="text-white/60 text-sm mb-1">WhatsApp</div>
-                      <a
-                        href={`https://wa.me/${COMPANY.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-lg font-medium hover:text-accent transition-colors"
-                      >
-                        Click to Chat
-                      </a>
-                    </div>
-                  </div>
-                  <div className="mt-8 pt-8 border-t border-white/10">
-                    <div className="text-white/60 text-sm mb-2">Working Hours</div>
-                    <div className="text-white">Monday - Saturday</div>
-                    <div className="text-white/70">9:00 AM - 6:00 PM</div>
-                  </div>
-                </div>
-              </AnimatedSection>
+            <div className="mt-8 pt-8 border-t border-white/10">
+              <div className="text-white/60 text-sm mb-2">Working Hours</div>
+              <div className="text-white">Monday - Saturday</div>
+              <div className="text-white/70">9:00 AM - 6:00 PM</div>
             </div>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <OfficeMap />
     </>
