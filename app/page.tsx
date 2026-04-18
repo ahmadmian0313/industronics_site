@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Hero } from '@/components/sections/home/Hero'
 import { Services } from '@/components/sections/home/Services'
 import { theme } from '@/lib/theme'
-
+import { CertificationsStrip } from '@/components/sections/home/CertificationsSection'
 const BrandSection = dynamic(() => import('@/components/BrandSection'))
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function Home() {
       }}
     >
       <Hero />
+      <CertificationsStrip /> 
       <Services />
       <BrandSection />
     </div>

@@ -1,3 +1,4 @@
+
 // lib/constants.ts
 export const COMPANY = {
   name: 'Industronics Engineering',
@@ -178,6 +179,19 @@ export const SOLUTIONS = [
   'Process Monitoring',
   'AS/RS Systems',
   'Weft Straightener',
+    'Flow Metering',
+  'Energy Monitoring',
+  'Warehouse Management',
+  'SCADA & OEE',
+  'pH Monitoring',
+  'Chemical Dosing',
+  'Web Tension Control',
+  'Humidity Control',
+  'Switch Gear & Panels',
+  'Process Monitoring',
+  'AS/RS Systems',
+  'Weft Straightener',
+  
 ] as const
 
 export const STATS = [

@@ -1,4 +1,5 @@
 // app/services/page.tsx
+import BrandSection from '@/components/BrandSection'
 import { ServicesSection } from '@/components/sections/home/ServicesSection'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
@@ -38,6 +39,8 @@ export default async function ServicesPage() {
 
       {/* Services Grid */}
       <ServicesSection />
+         {/* <BrandSection /> */}
+
     </main>
   )
 }

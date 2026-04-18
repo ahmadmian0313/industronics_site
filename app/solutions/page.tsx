@@ -10,73 +10,73 @@ const SOLUTIONS_DATA = [
   { 
     title: "Building Management", 
     desc: "Automated HVAC and lighting control for smart infrastructures.", 
-    imgSrc: "/solutions/building.png",
-    color: "#c9ced6" 
+    imgSrc: "/solutions/sol1.png",
+    color: "#ffffff" 
   },
   { 
     title: "Energy Monitoring", 
     desc: "Real-time tracking of power usage to reduce operational costs.", 
-    imgSrc: "/solutions/energy.png", 
+    imgSrc: "/solutions/sol2.png", 
     color: "#b8bec7" 
   },
   { 
     title: "Flow Metering", 
-    desc: "Precision liquid and gas flow measurement for industrial pipes.", 
-    imgSrc: "/solutions/flow.png", 
+    desc: "Precision liquid and gas flow  t for industrial pipes.", 
+    imgSrc: "/solutions/sol3.png", 
     color: "#aeb5bf" 
   },
   { 
     title: "E.P.C Contracts", 
     desc: "End-to-end Engineering, Procurement, and Construction services.", 
-    imgSrc: "/solutions/epc.png", 
+    imgSrc: "/solutions/sol4.png", 
     color: "#d5d9df" 
   },
   { 
     title: "Process Monitoring", 
     desc: "Visual tracking of production stages for quality assurance.", 
-    imgSrc: "/solutions/process.png", 
+    imgSrc: "/solutions/sol5.png", 
     color: "#aeb5bf" 
   },
   { 
     title: "Web Tension Control", 
     desc: "High-speed tension regulation for paper and textile printing.", 
-    imgSrc: "/solutions/tension.png", 
+    imgSrc: "/solutions/sol6.png", 
     color: "#c7ccd4" 
   },
   { 
     title: "pH Monitoring", 
     desc: "Automated chemical balance testing for water treatment.", 
-    imgSrc: "/solutions/ph.png", 
+    imgSrc: "/solutions/sol7.png", 
     color: "#bcc2cb" 
   },
   { 
     title: "Weft Straightener", 
     desc: "Advanced fabric alignment systems for textile processing.", 
-    imgSrc: "/solutions/weft.png", 
+    imgSrc: "/solutions/sol8.png", 
     color: "#d0d4db" 
   },
   { 
     title: "Moister Control", 
     desc: "Humidity and moisture regulation for raw material storage.", 
-    imgSrc: "/solutions/moisture.png", 
+    imgSrc: "/solutions/sol9.png", 
     color: "#a7aeb8" 
   },
   { 
     title: "Warehouse Management", 
     desc: "Inventory automation and real-time tracking solutions.", 
-    imgSrc: "/solutions/wh-mgmt.png", 
+    imgSrc: "/solutions/sol10.png", 
     color: "#d1d5dc" 
   },
   { 
     title: "Warehouse Control", 
     desc: "Centralized logic for automated conveyor and sorting systems.", 
-    imgSrc: "/solutions/wh-ctrl.png", 
+    imgSrc: "/solutions/sol11.png", 
     color: "#b0b6bf" 
   },
   { 
     title: "AS/RS Systems", 
     desc: "Automated Storage and Retrieval Systems for modern logistics.", 
-    imgSrc: "/solutions/asrs.png", 
+    imgSrc: "/solutions/sol13.png", 
     color: "#c7ccd3" 
   },
 ];
@@ -105,7 +105,7 @@ export default function SolutionsGrid() {
               Industronics Expertise
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Our <span className="text-[#167d82]">Solutions</span>
+              Our <span className="text-[#ffff]">Solutions</span>
             </h1>
             <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
               Explore our comprehensive range of 20+ industrial automation and engineering services.
@@ -115,7 +115,7 @@ export default function SolutionsGrid() {
       </section>
 
       {/* ── GRID SECTION ── */}
-      <section className="py-20 relative z-10 bg-[linear-gradient(145deg,#080808_0%,#17181b_45%,#2a2c31_100%)]">
+      <section className="py-20 relative z-10 bg-[linear-gradient(145deg,#090909_0%,#e7e3e3_45%,#2a2d33_100%)]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SOLUTIONS_DATA.map((item, index) => {
@@ -137,7 +137,7 @@ export default function SolutionsGrid() {
                     style={{ backgroundColor: item.color }}
                   />
 
-                  <div className="relative h-full bg-[#121315] border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 group-hover:translate-y-[-5px] group-hover:bg-[#1b1d20] shadow-2xl overflow-hidden">
+                  <div className="relative h-full bg-['linear-gradient(135deg, #090909 0%,  #e7e3e3 45%, #2a2d33 100%)'] border border-black/30 p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 group-hover:translate-y-[-5px] group-hover:bg-[#C0C0C0] shadow-2xl overflow-hidden">
                     
                     {/* ── 2. PICTURE SYSTEM REPLACED ICON BOX ── */}
                     <div className="w-20 h-20 mb-6 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
@@ -151,7 +151,7 @@ export default function SolutionsGrid() {
                        />
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight transition-colors">
+                    <h3 className="text-xl font-bold text-black mb-2 tracking-tight transition-colors">
                       {item.title}
                     </h3>
 
@@ -161,14 +161,14 @@ export default function SolutionsGrid() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          className="text-gray-400 text-sm leading-relaxed mt-4 pt-4 border-t border-white/10"
+                          className="text-black text-sm leading-relaxed mt-4 pt-4 border-t border-black/10"
                         >
                           {item.desc}
                         </motion.p>
                       ) : (
-                        <span className="text-[10px] uppercase tracking-[0.2em] text-[#ccd1d8] mt-2 opacity-50 group-hover:opacity-100 transition-opacity">
-                          Click for details
-                        </span>
+                     <span className="text-[10px] uppercase tracking-[0.2em] text-black mt-2 opacity-50 group-hover:opacity-100 transition-opacity">
+  Click for details
+</span>
                       )}
                     </AnimatePresence>
 

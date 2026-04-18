@@ -27,17 +27,50 @@ export const HOME_SLIDES: HomeSlide[] = [
 ]
 
 export const HOME_SERVICES = [
-  { title: 'Automation Services', desc: 'Complete PLC/DCS automation for industrial plants, modernization & upgrades.' },
-  { title: 'BMS Integration', desc: 'Customized Building Management Systems for optimal mechanical & electrical control.' },
-  { title: 'EPC Contracts', desc: 'Full Engineering, Procurement & Construction for large-scale complex projects.' },
-  { title: 'Mechanical Engineering', desc: 'In-house fabrication from raw material to cutting, forming, welding & assembly.' },
-  { title: 'Software Development', desc: 'Web-based Machine Monitoring, OEE Data Logging, WMS & ERP (SAP/Oracle).' },
-  { title: 'Process Monitoring', desc: 'Solutions for Textile, Denim, Carpet Industries — Web Tensions & Weft Controls.' },
-  { title: 'Instrumentation', desc: 'Precision calibration & instrumentation for industrial measurement & control.' },
-  { title: 'Dosing Systems', desc: 'Customised chemical dosing systems for Chemical & Dyes industries.' },
+  {
+title: "Automation Services",
+desc: "Delivering advanced industrial automation solutions to enhance efficiency and productivity.",
+image: "/Home_service/core1.png"
+},
+{
+title: "BMS Integration",
+desc: "Smart building management systems for optimized energy usage and control.",
+image: "/Home_service/core2.png"
+},
+{
+title: "EPC Contracts",
+desc: "End-to-end engineering, procurement, and construction services for complex projects.",
+image: "/Home_service/core3.jpg "
+},
+{
+title: "Mechanical Engineering",
+desc: "Expert mechanical design and fabrication services tailored to your needs.",
+image: "/Home_service/core4.png"
+},
+{
+title: "Software Development",
+desc: "Custom software solutions and data management systems for modern businesses.",
+image: "/Home_service/core5.png"
+},
+{
+title: "Process Monitoring",
+desc: "Real-time monitoring systems for specific industrial processes and quality control.",
+image: "/Home_service/core6.png"
+},
+{
+title: "Instrumentation",
+desc: "Precise measurement and calibration services for industrial instruments.",
+image: "/Home_service/core7.png"
+},
+{
+title: "Dosing Systems",
+desc: "Accurate chemical dosing systems designed for the chemical industry.",
+image: "/Home_service/core8.png"
+}
 ] as const
 
 export const HOME_STATS = [
-  { label: 'Years Experience', value: '25+' },
+  { label: 'Years Experience', value: '16+' },
   { label: 'Projects Done', value: '2000+' },
+  { label: 'Engineers', value: '100+' },
 ] as const

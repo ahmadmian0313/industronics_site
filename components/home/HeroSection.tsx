@@ -270,7 +270,7 @@ export default function HeroSection() {
           >
             Read More
           </a>
-        </div>
+        </div>  
 
         {/* Stats */}
         <div style={{

@@ -1,50 +1,89 @@
-// components/sections/home/CertificationsSection.tsx
 'use client'
 
-import { motion } from 'framer-motion'
-import { Shield, Award, BadgeCheck, Globe, Leaf, Building } from 'lucide-react'
-import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { COMPANY } from '@/lib/constants'
+export function CertificationsStrip() {
+  const CERTS = [
+    {
+      name: 'ISO 9001:2015 / 14001:2015 / 45001:2018',
+      bg: 'rgba(22,125,130,0.15)',
+      border: 'rgba(22,125,130,0.35)',
+      imgSrc: '/certs/iso.png',
+    },
+    {
+      name: 'PSEB — Pakistan Software Export Board',
+      bg: 'rgba(0,0,0,0.18)',
+      border: 'rgba(255,255,255,0.4)',
+      imgSrc: '/certs/pseb.png',
+    },
+    {
+      name: 'UKAS Management Systems',
+      bg: 'rgba(22,125,130,0.12)',
+      border: 'rgba(22,125,130,0.3)',
+      imgSrc: '/certs/ukas.png',
+    },
+    {
+      name: 'PEC — Pakistan Engineering Council',
+      bg: 'rgba(200,120,20,0.12)',
+      border: 'rgba(200,120,20,0.3)',
+      imgSrc: '/certs/PEC logo.jpg',
+    },
+    {
+      name: 'Green Building Council Member',
+      bg: 'rgba(22,120,50,0.14)',
+      border: 'rgba(22,120,50,0.35)',
+      imgSrc: '/certs/gec.png',
+    },
+    {
+      name: 'KCCI — Karachi Chamber of Commerce',
+      bg: 'rgba(90,50,160,0.14)',
+      border: 'rgba(90,50,160,0.35)',
+      imgSrc: '/certs/kcci.png',
+    },
+  ]
 
-const certificationIcons: Record<string, React.ElementType> = {
-  'ISO Certified': Shield,
-  'UKAS Accredited': Award,
-  'PEC Member': BadgeCheck,
-  'PSEB Member': Globe,
-  'USGBC Member': Leaf,
-  'KCCI Member': Building,
-}
+  const items = [...CERTS, ...CERTS]
 
-export function CertificationsSection() {
   return (
-    <section className="py-12 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <span className="text-xs font-semibold text-muted uppercase tracking-wider">
-              Trusted & Certified
+    <div className="w-full overflow-hidden bg-black/20 py-4 border-y border-white/5">
+      <div className="flex w-fit gap-8 animate-scroll">
+        {items.map((cert, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-3 px-4 py-2" // Items ko align karne ke liye
+            style={{
+              minWidth: 'max-content', // Text ke mutabiq width khud barh jaye
+              borderRadius: 8,
+              background: cert.bg,
+              border: `1px solid ${cert.border}`,
+            }}
+          >
+            {/* Icon Box */}
+            <div style={{ width: 32, height: 32, flexShrink: 0 }}>
+              {cert.imgSrc && (
+                <img
+                  src={cert.imgSrc}
+                  alt={cert.name}
+                  className="w-full h-full object-contain"
+                />
+              )}
+            </div>
+
+            {/* Text Name */}
+            <span className="text-white/90 text-sm font-medium whitespace-nowrap">
+              {cert.name}
             </span>
           </div>
-          
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {COMPANY.certifications.map((cert, index) => {
-              const IconComponent = certificationIcons[cert] || Shield
-              return (
-                <motion.div
-                  key={cert}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-muted hover:text-primary transition-colors group"
-                >
-                  <IconComponent className="w-5 h-5 group-hover:text-accent transition-colors" />
-                  <span className="text-sm font-medium">{cert}</span>
-                </motion.div>
-              )
-            })}
-          </div>
-        </AnimatedSection>
+        ))}
       </div>
-    </section>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          animation: scroll 40s linear infinite; /* Speed thori slow ki hai taake text parha jaye */
+        }
+      `}</style>
+    </div>
   )
 }

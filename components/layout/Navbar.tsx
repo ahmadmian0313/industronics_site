@@ -9,14 +9,6 @@ const COMPANY = {
   logoAlt: 'Industronics Engineering',
 }
 
-const CERTIFICATIONS = [
-  { name: 'ISO 9001:2015 / 14001:2015 / 45001:2018', icon: '🏆' },
-  { name: 'PSEB — Pakistan Software Export Board',    icon: '🇵🇰' },
-  { name: 'UKAS Management Systems',                  icon: '✅' },
-  { name: 'PEC — Pakistan Engineering Council',       icon: '⚙️' },
-  { name: 'Green Building Council Member',            icon: '🌱' },
-  { name: 'KCCI — Karachi Chamber of Commerce',       icon: '🏛️' },
-]
 
 const ABOUT_ITEMS = [
   { title: 'About Company', desc: 'Our company profile, history, and engineering values.', icon: '🏢', href: '/about' },
@@ -32,13 +24,13 @@ const ABOUT_SIDEBAR = [
 
 const NAV_LINKS = [
   { label: 'Home',         href: '/'          },
-  { label: 'Certified By', href: '#',  isCert: true  },
-    { label: 'Services',     href: '/services'  },
+
+  { label: 'Services',     href: '/services'  },
   { label: 'Solutions',    href: '/solutions' },
   { label: 'Products',     href: '/products'  },
   { label: 'Careers',      href: '/careers'   },
   { label: 'About Us',     href: '/about', isAbout: true },
-  { label: 'Contact us',      href: '/contact'   },
+  { label: 'Contact us',   href: '/contact'   },
 ]
 
 export function Navbar() {
@@ -102,7 +94,7 @@ export function Navbar() {
     background:      'transparent',
     border:          'none',
     borderBottom:    isOpen ? '2px solid #167d82' : '2px solid transparent',
-    color:           isOpen ? '#5ecdd1' : 'rgba(255,255,255,0.85)',
+    color:           isOpen ? '#5ecdd1' : 'rgba(255,255,255,0.75)',  // CHANGED: 0.85 → 0.75
     cursor:          'pointer',
     fontFamily:      'inherit',
     whiteSpace:      'nowrap',
@@ -118,130 +110,93 @@ export function Navbar() {
         top: 0, left: 0, right: 0,
         zIndex:      1000,
         width:       '100%',
-        background:  'linear-gradient(90deg, #f5f5f5b6  0%, #0b1a2e 40%, #0d2035 70%, #f5f5f5b6)',
-        borderBottom: '2px solid #167d82',
+        // CHANGED: pure near-black, no grey/silver gradient on corners
+        background:  '#0a0f1a',
+        // CHANGED: thin white line instead of thick teal
+        borderBottom: '1px solid rgba(255,255,255,0.15)',
+        // CHANGED: clean dark shadow, no teal glow on the bar
         boxShadow: scrolled
-          ? '0 4px 32px rgba(22,125,130,0.4), 0 1px 0 rgba(22,125,130,0.2)'
-          : '0 2px 16px rgba(22,125,130,0.15)',
+          ? '0 4px 24px rgba(0,0,0,0.6)'
+          : '0 1px 0 rgba(255,255,255,0.08)',
         transition: 'box-shadow 0.3s ease',
       }}>
 
         <div style={{ display:'flex', alignItems:'stretch', width:'100%', height:68 }}>
 
-{/* ── LOGO SECTION ── */}
-<Link href="/" style={{
-  display: 'flex', 
-  alignItems: 'center', 
-  textDecoration: 'none', 
-  flexShrink: 0,
-  height: '100%', 
-  position: 'relative',
-  borderLeft: '4px solid #167d82',
-  backgroundColor: 'rgba(255,255,255,0.03)',
-  minWidth: '400px', // Poore block ki width thodi badhai hy bade logo ke liye
-}}>
-  {/* Left Logo Block (Full Height Sidebar style) */}
-  <div style={{
-    width: '120px', // Logo container bada kiya hy (Original was 100px)
-    height: '100%', 
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRight: '1px solid rgba(22,125,130,0.3)',
-    backgroundColor: 'rgba(0,0,0,0.1)',
-  }}>
-    <Image 
-      src={COMPANY.logoSrc} 
-      alt={COMPANY.logoAlt} 
-      fill
-      style={{ 
-        objectFit: 'contain', 
-        padding: '5px', 
-        transform: 'scale(1.5)', // Logo ko bara karne ke liye scale badhaya hy
-      }} 
-      priority
-    />
-  </div>
-  
-  {/* Right Text Block (Centered) */}
-  <div style={{ 
-    display: 'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'center', 
-    padding: '0 25px',
-    flexGrow: 1,
-  }}>
-    <div style={{ 
-      color: '#ffffff', 
-      fontWeight: 900, 
-      fontSize: '24px', // Same Size as requested
-      lineHeight: '1',
-      letterSpacing: '0.12em', 
-      textTransform: 'uppercase' 
-    }}>
-      INDUSTRONICS
-    </div>
-    <div style={{ 
-      color: '#5ecdd1', 
-      fontWeight: 600, 
-      fontSize: '12px', // Same Size as requested
-      lineHeight: '1',
-      marginTop: '8px', 
-      letterSpacing: '0.45em', 
-      textTransform: 'uppercase' 
-    }}>
-      ENGINEERING
-    </div>
-  </div>
-</Link>
+          {/* ── LOGO SECTION ── */}
+          <Link href="/" style={{
+            display: 'flex',
+            alignItems: 'center',
+            textDecoration: 'none',
+            flexShrink: 0,
+            height: '100%',
+            position: 'relative',
+            // CHANGED: removed borderLeft '4px solid #167d82'
+            backgroundColor: 'rgba(0,0,0,0.2)',  // KEPT as requested
+            minWidth: '400px',
+          }}>
+            {/* Left Logo Block */}
+            <div style={{
+              width: '120px',
+              height: '100%',
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRight: '1px solid rgba(255,255,255,0.08)',  // CHANGED: subtle white instead of teal
+              backgroundColor: '#000000d3',
+            }}>
+              <Image
+                src={COMPANY.logoSrc}
+                alt={COMPANY.logoAlt}
+                fill
+                style={{
+                  objectFit: 'contain',
+                  padding: '5px',
+                  transform: 'scale(1.5)',
+                }}
+                priority
+              />
+            </div>
+
+            {/* Right Text Block */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              padding: '0 25px',
+              flexGrow: 1,
+            }}>
+              <div style={{
+                color: '#ffffff',
+                fontWeight: 900,
+                fontSize: '26px',          // CHANGED: 24px → 26px
+                lineHeight: '1',
+                letterSpacing: '0.15em',   // CHANGED: 0.12em → 0.15em
+                textTransform: 'uppercase'
+              }}>
+                INDUSTRONICS
+              </div>
+              <div style={{
+                color: '#5ecdd1',
+                fontWeight: 600,
+                fontSize: '11px',          // CHANGED: 12px → 11px
+                lineHeight: '1',
+                marginTop: '8px',
+                letterSpacing: '0.5em',    // CHANGED: 0.45em → 0.5em
+                textTransform: 'uppercase'
+              }}>
+                ENGINEERING
+              </div>
+            </div>
+          </Link>
+
           {/* ── NAV LINKS ── */}
           <nav className="ie-nav" style={{ display:'flex', alignItems:'stretch', flex:1, justifyContent:'center', gap: 4, paddingInline: 18 }}>
             {NAV_LINKS.map((item, idx) => {
 
               // ── CERTIFIED BY dropdown ──
-              if (item.isCert) {
-                return (
-                  <div key={idx} ref={certRef} style={{ position:'relative', display:'flex', alignItems:'stretch' }}>
-                    <button
-                      onClick={() => setCertOpen(p => !p)}
-                      style={navBtnStyle(certOpen)}
-                      onMouseOver={e => { if (!certOpen) { e.currentTarget.style.color='#5ecdd1'; e.currentTarget.style.backgroundColor='rgba(22,125,130,0.07)' }}}
-                      onMouseOut={e => { if (!certOpen) { e.currentTarget.style.color='rgba(255,255,255,0.85)'; e.currentTarget.style.backgroundColor='transparent' }}}
-                    >
-                      {item.label}
-                      <svg width="9" height="9" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
-                        style={{ transition:'transform 0.25s', transform: certOpen ? 'rotate(180deg)' : 'rotate(0)' }}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
-                      </svg>
-                    </button>
-                    {certOpen && (
-                      <div style={{
-                        position:'absolute', top:'100%', left:'50%', transform:'translateX(-50%)',
-                        minWidth:300, marginTop:4,
-                        background:'linear-gradient(160deg, #0b1a2e 0%, #0e2236 100%)',
-                        border:'1px solid rgba(22,125,130,0.4)', borderRadius:12,
-                        boxShadow:'0 20px 50px rgba(0,0,0,0.6), 0 0 20px rgba(22,125,130,0.2)',
-                        overflow:'hidden', zIndex:999,
-                      }}>
-                        <div style={{ padding:'10px 16px', background:'rgba(22,125,130,0.18)', borderBottom:'1px solid rgba(22,125,130,0.3)', fontSize:10, fontWeight:800, color:'#5ecdd1', letterSpacing:'0.22em', textTransform:'uppercase' }}>
-                          Our Certifications
-                        </div>
-                        {CERTIFICATIONS.map((cert, i) => (
-                          <a key={i} href="#" onClick={() => setCertOpen(false)}
-                            style={{ display:'flex', alignItems:'center', gap:12, padding:'11px 16px', color:'rgba(255,255,255,0.82)', fontSize:13, fontWeight:500, textDecoration:'none', borderBottom: i < CERTIFICATIONS.length-1 ? '1px solid rgba(22,125,130,0.1)' : 'none', transition:'all 0.2s' }}
-                            onMouseOver={e => { e.currentTarget.style.backgroundColor='rgba(22,125,130,0.15)'; e.currentTarget.style.color='#5ecdd1'; e.currentTarget.style.paddingLeft='22px' }}
-                            onMouseOut={e => { e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.color='rgba(255,255,255,0.82)'; e.currentTarget.style.paddingLeft='16px' }}
-                          >
-                            <span style={{ fontSize:16 }}>{cert.icon}</span>
-                            <span>{cert.name}</span>
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              }
+        
 
               // ── ABOUT US mega dropdown ──
               if (item.isAbout) {
@@ -251,7 +206,7 @@ export function Navbar() {
                       onClick={() => setAboutOpen(p => !p)}
                       style={navBtnStyle(aboutOpen)}
                       onMouseOver={e => { if (!aboutOpen) { e.currentTarget.style.color='#5ecdd1'; e.currentTarget.style.backgroundColor='rgba(22,125,130,0.07)' }}}
-                      onMouseOut={e => { if (!aboutOpen) { e.currentTarget.style.color='rgba(255,255,255,0.85)'; e.currentTarget.style.backgroundColor='transparent' }}}
+                      onMouseOut={e => { if (!aboutOpen) { e.currentTarget.style.color='rgba(255,255,255,0.75)'; e.currentTarget.style.backgroundColor='transparent' }}}
                     >
                       {item.label}
                       <svg width="9" height="9" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
@@ -327,7 +282,7 @@ export function Navbar() {
                               </div>
 
                               {/* Divider */}
-                              <div style={{ height:1, background:'linear-gradient(90deg, rgba(22,125,130,0.5) 0%, transparent 80%)', marginBottom:20 }} />
+                              <div style={{ height:1, background:'linear-gradient(90deg, rgb(255, 255, 255) 0%, transparent 80%)', marginBottom:20 }} />
 
                               <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
                                 {ABOUT_ITEMS.map((card, i) => (
@@ -414,14 +369,14 @@ export function Navbar() {
                     display:'flex', alignItems:'center', padding:'0 10px',
                     fontSize:12, fontWeight:700, letterSpacing:'0.07em', textTransform:'uppercase',
                     textDecoration:'none', whiteSpace:'nowrap',
-                    color: isActive ? '#5ecdd1' : 'rgba(255,255,255,0.85)',
+                    color: isActive ? '#5ecdd1' : 'rgba(255,255,255,0.75)',  // CHANGED: 0.85 → 0.75
                     borderBottom: isActive ? '2px solid #167d82' : '2px solid transparent',
                     borderTop: isActive ? '2px solid rgba(22,125,130,0.25)' : '2px solid transparent',
                     backgroundColor: isActive ? 'rgba(22,125,130,0.1)' : 'transparent',
                     transition:'all 0.2s',
                   }}
                   onMouseOver={e => { if (!isActive) { e.currentTarget.style.color='#5ecdd1'; e.currentTarget.style.backgroundColor='rgba(22,125,130,0.07)'; e.currentTarget.style.borderBottomColor='rgba(22,125,130,0.35)' }}}
-                  onMouseOut={e => { if (!isActive) { e.currentTarget.style.color='rgba(255,255,255,0.85)'; e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.borderBottomColor='transparent' }}}
+                  onMouseOut={e => { if (!isActive) { e.currentTarget.style.color='rgba(255,255,255,0.75)'; e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.borderBottomColor='transparent' }}}
                 >
                   {item.label}
                 </Link>
@@ -429,57 +384,60 @@ export function Navbar() {
             })}
           </nav>
 
-{/* ── SEARCH BAR --- For Products/  */}
-<div className="ie-search" style={{ display: 'flex', alignItems: 'center', padding: '0 16px', flexShrink: 0 }}>
-  {/* Inline Style Block for Placeholder - Yeh line "Search Products" ko white karegi */}
-  <style>{`
-    .ie-search-input::placeholder {
-      color: #ffffff !important;
-      opacity: 1 !important;
-      font-weight: 500;
-    }
-  `}</style>
+          {/* ── SEARCH BAR ── */}
+          <div className="ie-search" style={{ display: 'flex', alignItems: 'center', padding: '0 16px', flexShrink: 0 }}>
+            <style>{`
+              .ie-search-input::placeholder {
+                color: rgb(255, 255, 255) !important;
+                opacity: 1 !important;
+                font-weight: 400;
+                font-style: italic;
+              }
+            `}</style>
 
-  <form onSubmit={handleSearch} style={{ display: 'flex', alignItems: 'center' }}>
-    <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-      
-      {/* Icon */}
-      <svg 
-        style={{ position: 'absolute', left: 14, zIndex: 1, color: '#ffffff', pointerEvents: 'none' }}
-        width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-      </svg>
+            <form onSubmit={handleSearch} style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
 
-      <input 
-        type="text" 
-        className="ie-search-input" // Yeh class zaroori hai
-        value={searchVal} 
-        onChange={e => setSearchVal(e.target.value)}
-        onFocus={() => setSearchFocus(true)} 
-        onBlur={() => setSearchFocus(false)}
-        placeholder="Search Products..."
-        style={{
-          borderRadius: 50, 
-          padding: '10px 16px 10px 42px', 
-          fontSize: 13, 
-          fontWeight: 600,
-          color: '#ffffff', // Typing text color
-          outline: 'none', 
-          width: searchFocus ? 200 : 180,
-          backgroundColor: searchFocus ? '#167d82' : 'rgba(22, 125, 130, 0.95)', // Background thora dark rakha hai taake white pop kare
-          border: searchFocus ? '1.5px solid #ffffff' : '1.5px solid rgba(255,255,255,0.3)',
-          fontFamily: 'inherit', 
-          letterSpacing: '0.02em',
-          boxShadow: searchFocus 
-            ? '0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(22, 125, 130, 0.5)' 
-            : '0 2px 8px rgba(0,0,0,0.1)',
-          transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-        }}
-      />
-    </div>
-  </form>
-</div>
+                {/* Icon */}
+                <svg
+                  style={{ position: 'absolute', left: 14, zIndex: 1, color: 'rgb(255, 255, 255)', pointerEvents: 'none', transition: 'color 0.3s' }}
+                  width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+
+                <input
+                  type="text"
+                  className="ie-search-input"
+                  value={searchVal}
+                  onChange={e => setSearchVal(e.target.value)}
+                  onFocus={() => setSearchFocus(true)}
+                  onBlur={() => setSearchFocus(false)}
+                  placeholder="Search Products..."
+                  style={{
+                    borderRadius: 50,
+                    padding: '10px 16px 10px 42px',
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: '#ffffff',
+                    outline: 'none',
+                    width: searchFocus ? 200 : 180,
+                    // CHANGED: subtle white-glass look instead of solid teal
+                    backgroundColor: searchFocus ? 'rgba(255,255,255,0.12)' : 'rgba(255, 255, 255, 0.07)',
+                    // CHANGED: white border default, teal on focus
+                    border: searchFocus ? '1px solid rgba(94,205,209,0.6)' : '1px solid rgba(255, 255, 255, 0.15)',
+                    fontFamily: 'inherit',
+                    letterSpacing: '0.02em',
+                    boxShadow: searchFocus
+                      ? '0 4px 20px rgba(255, 255, 255, 0.3), 0 0 12px rgba(255, 255, 255, 0.15)'
+                      : 'none',
+                    transition: 'all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                  }}
+                />
+              </div>
+            </form>
+          </div>
+
           {/* ── GET A QUOTE ── */}
           <Link href="/contact" className="ie-quote"
             style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, background:'linear-gradient(135deg,#0d5c60 0%,#167d82 35%,#1a9499 65%,#20b0b8 100%)', color:'white', fontWeight:800, fontSize:12, letterSpacing:'0.12em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap', flexShrink:0, height:42, alignSelf:'center', margin:'0 16px', padding:'0 22px', borderRadius:50, border:'1px solid rgba(94,205,209,0.25)', boxShadow:'0 0 20px rgba(22,125,130,0.4)', transition:'all 0.3s ease' }}
@@ -494,7 +452,7 @@ export function Navbar() {
 
           {/* ── HAMBURGER ── */}
           <button onClick={() => setMobileOpen(p => !p)} className="ie-hamburger" aria-label="Toggle navigation menu"
-            style={{ display:'none', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:5, padding:'0 20px', border:'none', background:'transparent', cursor:'pointer', borderLeft:'1px solid rgba(22,125,130,0.2)', flexShrink:0, height:'100%' }}>
+            style={{ display:'none', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:5, padding:'0 20px', border:'none', background:'transparent', cursor:'pointer', borderLeft:'1px solid rgba(255,255,255,0.08)', flexShrink:0, height:'100%' }}>
             {[0,1,2].map(i => (
               <span key={i} style={{ display:'block', width:22, height:2, backgroundColor:'#5ecdd1', borderRadius:2, transition:'all 0.3s ease',
                 transform: mobileOpen ? i===0 ? 'rotate(45deg) translateY(7px)' : i===2 ? 'rotate(-45deg) translateY(-7px)' : 'none' : 'none',
@@ -505,7 +463,7 @@ export function Navbar() {
         </div>
 
         {/* ══ MOBILE MENU ══ */}
-        <div style={{ overflow:'hidden', maxHeight: mobileOpen ? 800 : 0, transition:'max-height 0.4s ease', background:'linear-gradient(180deg,#0b1a2e 0%,#0d2035 100%)', borderTop: mobileOpen ? '1px solid rgba(22,125,130,0.3)' : 'none' }}>
+        <div style={{ overflow:'hidden', maxHeight: mobileOpen ? 800 : 0, transition:'max-height 0.4s ease', background:'#0a0f1a', borderTop: mobileOpen ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
           <div style={{ padding:'16px 20px 28px' }}>
             <form onSubmit={handleSearch} style={{ marginBottom:16 }}>
               <div style={{ position:'relative' }}>
@@ -513,8 +471,8 @@ export function Navbar() {
                   width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
-                <input type="text" placeholder="  s..." value={searchVal} onChange={e => setSearchVal(e.target.value)}
-                  style={{ width:'100%', border:'1px solid rgba(22,125,130,0.4)', borderRadius:50, padding:'10px 18px 10px 40px', fontSize:13, backgroundColor:'rgb(255, 255, 255)', color:'#e2e8f0', outline:'none', fontFamily:'inherit', boxSizing:'border-box' }}
+                <input type="text" placeholder="Search Products..." value={searchVal} onChange={e => setSearchVal(e.target.value)}
+                  style={{ width:'100%', border:'1px solid rgba(255,255,255,0.15)', borderRadius:50, padding:'10px 18px 10px 40px', fontSize:13, backgroundColor:'rgba(255,255,255,0.07)', color:'#e2e8f0', outline:'none', fontFamily:'inherit', boxSizing:'border-box' }}
                 />
               </div>
             </form>
@@ -523,7 +481,7 @@ export function Navbar() {
               if (item.isCert) return (
                 <div key={idx}>
                   <button onClick={() => setMobileCert(p => !p)}
-                    style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', color: mobileCert ? '#5ecdd1' : 'rgba(255,255,255,0.85)', backgroundColor: mobileCert ? 'rgba(22,125,130,0.15)' : 'transparent', border:'none', borderLeft: mobileCert ? '3px solid #167d82' : '3px solid transparent', borderRadius:6, marginBottom:3, cursor:'pointer', fontFamily:'inherit', transition:'all 0.2s' }}>
+                    style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', color: mobileCert ? '#5ecdd1' : 'rgba(255,255,255,0.75)', backgroundColor: mobileCert ? 'rgba(22,125,130,0.15)' : 'transparent', border:'none', borderLeft: mobileCert ? '3px solid #167d82' : '3px solid transparent', borderRadius:6, marginBottom:3, cursor:'pointer', fontFamily:'inherit', transition:'all 0.2s' }}>
                     {item.label}
                     <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ transition:'transform 0.3s', transform: mobileCert ? 'rotate(180deg)' : 'none' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
@@ -545,7 +503,7 @@ export function Navbar() {
               if (item.isAbout) return (
                 <div key={idx}>
                   <button onClick={() => setMobileAbout(p => !p)}
-                    style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', color: mobileAbout ? '#5ecdd1' : 'rgba(255,255,255,0.85)', backgroundColor: mobileAbout ? 'rgba(22,125,130,0.15)' : 'transparent', border:'none', borderLeft: mobileAbout ? '3px solid #167d82' : '3px solid transparent', borderRadius:6, marginBottom:3, cursor:'pointer', fontFamily:'inherit', transition:'all 0.2s' }}>
+                    style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', color: mobileAbout ? '#5ecdd1' : 'rgba(255,255,255,0.75)', backgroundColor: mobileAbout ? 'rgba(22,125,130,0.15)' : 'transparent', border:'none', borderLeft: mobileAbout ? '3px solid #167d82' : '3px solid transparent', borderRadius:6, marginBottom:3, cursor:'pointer', fontFamily:'inherit', transition:'all 0.2s' }}>
                     {item.label}
                     <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ transition:'transform 0.3s', transform: mobileAbout ? 'rotate(180deg)' : 'none' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
@@ -567,7 +525,7 @@ export function Navbar() {
 
               return (
                 <Link key={idx} href={item.href} onClick={() => { setActiveLink(item.label); setMobileOpen(false) }}
-                  style={{ display:'flex', alignItems:'center', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', color: activeLink===item.label ? '#5ecdd1' : 'rgba(255,255,255,0.85)', backgroundColor: activeLink===item.label ? 'rgba(22,125,130,0.15)' : 'transparent', borderRadius:6, marginBottom:3, borderLeft: activeLink===item.label ? '3px solid #167d82' : '3px solid transparent', transition:'all 0.2s' }}>
+                  style={{ display:'flex', alignItems:'center', padding:'12px 14px', fontSize:13, fontWeight:700, letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', color: activeLink===item.label ? '#5ecdd1' : 'rgba(255,255,255,0.75)', backgroundColor: activeLink===item.label ? 'rgba(22,125,130,0.15)' : 'transparent', borderRadius:6, marginBottom:3, borderLeft: activeLink===item.label ? '3px solid #167d82' : '3px solid transparent', transition:'all 0.2s' }}>
                   {item.label}
                 </Link>
               )
@@ -598,7 +556,7 @@ export function Navbar() {
           .ie-hamburger { display: flex !important; }
         }
         a:focus-visible, button:focus-visible { outline: 2px solid #167d82; outline-offset: 2px; border-radius: 4px; }
-        input::placeholder { color: rgba(94,205,209,0.45); font-style: italic; letter-spacing: 0.05em; }
+        .ie-search-input::placeholder { color: rgba(255,255,255,0.45) !important; font-style: italic; letter-spacing: 0.04em; }
       `}</style>
     </>
   )

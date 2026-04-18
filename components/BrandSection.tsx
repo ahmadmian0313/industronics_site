@@ -21,8 +21,8 @@ const brands = [
 const BrandSection = () => {
   return (
     <div style={{ 
-      backgroundColor: "#080d16", 
-      padding: "80px 20px", 
+      backgroundColor: "#00000023", 
+      padding: "40px 20px", 
       overflow: "hidden", 
       position: "relative" 
     }}>
@@ -31,7 +31,7 @@ const BrandSection = () => {
         
         {/* Glass Container */}
         <div style={{
-          background: "rgba(255, 255, 255, 0.05)",
+          background: "linear-gradient(135deg, #000000 70%,  #e7e3e3 100%, #ffffff 100%)'",
           backdropFilter: "blur(15px)",
           borderRadius: "30px",
           border: "1px solid rgba(255, 255, 255, 0.1)",

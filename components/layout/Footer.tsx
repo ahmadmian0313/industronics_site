@@ -7,11 +7,11 @@ import { COMPANY, SERVICES, SOLUTIONS } from '@/lib/constants'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
+  
   return (
     <footer className="text-white border-t border-white/5 shadow-2xl overflow-hidden"
   style={{
-    background: 'linear-gradient(90deg, #7f8894 0%, #0b1a2e 40%, #0d2035 70%, #628488 100%)'
+    background: 'linear-gradient(90deg, #000000 0%, #000000 0%, #000000 0%, #000000 0%)'
   }}>
       {/* Main Footer */}
       <div className="max-w-8x1 mx-auto px-6 py-16">
@@ -31,7 +31,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href={COMPANY.social.facebook}
+                href={"https://www.facebook.com/IndustronicsEngineering07"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
@@ -40,7 +40,7 @@ export function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href={COMPANY.social.instagram}
+                href={"https://www.instagram.com/industronicsengineering/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
@@ -49,7 +49,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href={COMPANY.social.linkedin}
+                href={"https://pk.linkedin.com/company/industronics-engineering"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
@@ -83,12 +83,13 @@ export function Footer() {
             <ul className="space-y-2">
               {SOLUTIONS.slice(0, 7).map((solution) => (
                 <li key={solution}>
+                  
                   <span className="text-white/70 text-sm">{solution}</span>
                 </li>
               ))}
             </ul>
           </div>
-
+              
           {/* Contact */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact</h4>
