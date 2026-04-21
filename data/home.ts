@@ -70,7 +70,7 @@ image: "/Home_service/core8.png"
 ] as const
 
 export const HOME_STATS = [
-  { label: 'Years Experience', value: '16+' },
-  { label: 'Projects Done', value: '2000+' },
-  { label: 'Engineers', value: '100+' },
+  { label: 'Years Experience', value: '25+' },
+  { label: 'Projects Done', value: '260+' },
+  { label: 'Engineers', value: '55+' },
 ] as const

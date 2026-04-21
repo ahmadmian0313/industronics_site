@@ -17,7 +17,8 @@ export const SITE_DATA = {
     description: "End-to-End EPC Contracts for Large-Scale Industrial Projects",
     stats: [
       { label: "YEARS EXPERIENCE", value: "25+" },
-      { label: "PROJECTS DONE", value: "2,000+" }
+      { label: "PROJECTS DONE", value: "260+" },
+      { label: "PROJECTS DONE", value: "260+" }
     ]
   },
   footer: {

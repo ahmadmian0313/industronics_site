@@ -95,7 +95,7 @@ export function HeroSection() {
                 </div>
                 <div className="w-px h-12 bg-white/20 hidden sm:block" />
                 <div>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-accent">500+</div>
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-accent">260+</div>
                   <div className="text-sm text-white/60">Clients Served</div>
                 </div>
                 <div className="w-px h-12 bg-white/20 hidden sm:block" />
