@@ -1,13 +1,79 @@
+/* /src/theme/theme.css */
+
 :root {
-  --color-bg-body: #0a0f1a;
-  --color-bg-page: #0b181d;
-  --color-bg-hero: #1a1d1db9;
-  --color-bg-section: #cccccc;
-  --color-bg-card: #0d1520;
-  --color-primary: #167d82;
-  --color-text: #ffffff;
-  --color-text-muted: #9ca3af;
-  --color-text-subtle: #6b7280;
+  /* --- 1. CORE BRANDING (The Industrial Teal) --- */
+  --color-primary: #167d82;         /* Main Theme */
+  --color-primary-accent: #1a9499;  /* Secondary Teal */
+  --color-primary-light: #5ecdd1;   /* Hover/Light Teal */
+
+
+  /* --- 2. DARK UI BACKGROUNDS --- */
+  --color-bg-body: #0a0f1a;         /* Main Site Bg */
+  --color-bg-page: #0b181d;         /* Page Shift        only 02 may use hua hy theme.css and theme.ts*/ 
+  --color-bg-hero: #1a1d1db9;       /* Transparent Hero  only 02 may use hua hy theme.css and theme.ts*/
+  --color-bg-card: #0d1520;         /* Card Surface      only 02 may use hua hy theme.css and theme.ts*/
+  --color-bg-pure-black: #000000;   /* Pure Black */
+  --color-bg-dark-surface: #0e0e0e; /* Component Bg */
+  --color-bg-soft: #141414;         /* Soft Dark Shade */
+
+  --color-bg-input: #0f0f10;        /* Input background */
+
+  /* --- 3. INDUSTRIAL GRAYS & METALLICS --- */
+  --color-gray-border: #d8dce3;     /* Border gray */
+  --color-gray-metallic: #c8cdd4;   /* Silver tone */
+  --color-gray-cool: #c7cbd2;       /* Cool gray */
+  --color-gray-light: #e0e0e0;      /* Light UI gray */
+
+  --color-gray-skeleton: #111111;   /* Skeleton base */
+  --color-silver-muted: #c5c8ce;    /* Muted silver */
+
+  /* --- 4. TEXT COLORS (From your specific hex codes) --- */
+  --color-text-bright: #ffffff;     /* Headings */
+
+
+  --color-text-gray-1: #b8bec7;     /* Varied industrial gray text */
+  --color-text-gray-2: #aeb5bf;
+  --color-text-gray-3: #d5d9df;
+  --color-text-gray-4: #bcc2cb;
+  --color-text-gray-5: #d0d4db;
+  --color-text-gray-6: #a7aeb8;
+  --color-text-gray-7: #d1d5dc;
+
+  /* --- 5. SOCIAL & ALERTS --- */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+  --color-error: #ff4444;
+  --color-error-alt: #ff6b6b;
+
+
+  /* --- 6. GLASSMORPHISM & TRANSPARENCIES --- */
+ 
+
+  
+  --glass-white-10: rgba(255, 255, 255, 0.1);
+  
+  --glass-white-25: rgba(255, 255, 255, 0.25);
+
+
+  /* --- 7. COMPLEX GRADIENTS --- */
+  /* Metallic Industrial Gradient (Your most used one) */
+ 
+  
+  /* Background Pattern Grid */
+  --pattern-grid: linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+                  linear-gradient(90deg, rgb(255, 255, 255) 1px, transparent 1px);
+  
+  /* Hero Deep Gradient */
+  --grad-hero-deep: linear-gradient(135deg, #060f1a 0%, #0c1e2c 50%, #0e2535 100%);
+  
+
+
+  
+  /* Radial Center Gradient */
+  --grad-industrial-radial: radial-gradient(circle at center, #e7e3e3 0%, #2a2d33 60%, #090909 100%);
+
+  /* --- 8. LAYOUT & TYPOGRAPHY --- */
   --font-base: 'Segoe UI', system-ui, sans-serif;
   --space-container-max: 1200px;
+  --grid-size: 50px;
 }

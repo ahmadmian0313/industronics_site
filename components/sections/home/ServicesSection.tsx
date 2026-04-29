@@ -13,7 +13,7 @@ export function ServicesSection() {
         <div
           className="absolute inset-0 opacity-[0.07]" // Lowered opacity for elegance
           style={{
-            backgroundImage: `linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(var(--glass-white-10) 1px, transparent 1px)`,
             backgroundSize: '120px 100%', 
           }}
         />
@@ -54,14 +54,20 @@ export function ServicesSection() {
                   </div>
                 </div>
 
-                {/* BACK SIDE */}
-                <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-[#167d82] to-[#0d5a5e] p-8 rounded-2xl flex flex-col justify-center items-center text-center text-white">
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-white/90 mb-8 leading-relaxed">{service.description || service.shortDescription}</p>
-                  <button className="px-8 py-3 bg-white text-[#167d82] rounded-full font-bold shadow-xl hover:scale-105 transition-transform">
-                    Learn More
-                  </button>
-                </div>
+             {/* BACK SIDE */}
+<div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-[var(--color-primary)] to-[#0d5a5e] p-8 rounded-2xl flex flex-col justify-center items-center text-center text-white">
+  
+  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+  
+  <p className="text-white/90 mb-8 leading-relaxed">
+    {service.description || service.shortDescription}
+  </p>
+
+  <button className="px-8 py-3 bg-white text-[var(--color-primary)] rounded-full font-bold shadow-xl hover:scale-105 transition-transform">
+    Learn More
+  </button>
+
+</div>
               </div>
             </motion.div>
           ))}

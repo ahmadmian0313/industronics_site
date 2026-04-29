@@ -26,9 +26,9 @@ export function OfficeMap() {
     // Line 28: bg-background remove karke style add kiya gaya hai
    <section 
   className="py-20 md:py-28" 
-  style={{ 
-    background: "radial-gradient(circle at center, #e7e3e3 0%, #2a2d33 60%, #090909 100%)" 
-  }}
+ style={{ 
+  background: "var(--grad-industrial-radial)" 
+}}
 >
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="text-center mb-12">

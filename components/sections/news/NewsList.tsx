@@ -25,7 +25,7 @@ export function NewsList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       {NEWS_POSTS.map((post) => (
-        <article key={post.id} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f0f10] to-[#191a1d] overflow-hidden group">
+        <article key={post.id} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[var(--color-bg-input)] to-[#191a1d] overflow-hidden group">
           <div className="relative h-52">
             <Image src={post.image} alt={post.title} fill unoptimized className="object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>

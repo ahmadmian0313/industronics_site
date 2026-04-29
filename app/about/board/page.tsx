@@ -22,7 +22,7 @@ export default function BoardPage() {
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-6 text-[#d8dce3]">Chief Executive Officer</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--color-gray-border)]">Chief Executive Officer</h2>
           <div className="max-w-md">
             <TeamMemberCard {...BOARD_CEO} />
           </div>
@@ -31,7 +31,7 @@ export default function BoardPage() {
 
       <section className="pb-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-6 text-[#d8dce3]">GM / Directors</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--color-gray-border)]">GM / Directors</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {BOARD_DIRECTORS.map((member) => (
               <TeamMemberCard key={member.name} {...member} />
@@ -42,7 +42,7 @@ export default function BoardPage() {
 
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-6 text-[#d8dce3]">Department Heads</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[var(--color-gray-border)]">Department Heads</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {DEPARTMENT_HEADS.map((member) => (
               <TeamMemberCard key={member.name} {...member} />

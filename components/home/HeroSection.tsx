@@ -11,8 +11,8 @@ const SLIDES = [
     title2:   'Automation',
     subtitle: 'Next-Gen PLC, SCADA & DCS Solutions for Modern Industry',
     image:    '/images/automation.jpg',
-    bgColor:  'linear-gradient(135deg, #071520 0%, #0d2535 50%, #0a1f30 100%)',
-    accent:   '#167d82',
+    bgColor: 'var(--grad-hero-deep)',
+    accent:   ' var(--color-primary)',
   },
   {
     tag:      'Software Development',
@@ -20,8 +20,8 @@ const SLIDES = [
     title2:   'Development',
     subtitle: 'Web-Based Machine Monitoring, OEE & ERP Integration Systems',
     image:    '/images/software.jpg',
-    bgColor:  'linear-gradient(135deg, #071520 0%, #091e2e 50%, #0b2535 100%)',
-    accent:   '#1a9499',
+    bgColor: 'var(--grad-hero-deep)',
+    accent:   'var(--color-primary-accent)',
   },
   {
     tag:      'EPC Contracts',
@@ -29,8 +29,8 @@ const SLIDES = [
     title2:   'Procurement',
     subtitle: 'End-to-End EPC Contracts for Large-Scale Industrial Projects',
     image:    '/images/engineering.jpg',
-    bgColor:  'linear-gradient(135deg, #060f1a 0%, #0c1e2c 50%, #0e2535 100%)',
-    accent:   '#167d82',
+   bgColor: 'var(--grad-hero-deep)',
+    accent:   ' var(--color-primary)',
   },
 ]
 
@@ -111,7 +111,7 @@ export default function HeroSection() {
             <svg style={{ position:'absolute', inset:0, width:'100%', height:'100%', opacity:0.07 }}>
               <defs>
                 <pattern id={`g${idx}`} width="60" height="60" patternUnits="userSpaceOnUse">
-                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#167d82" strokeWidth="0.8"/>
+                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke=" var(--color-primary)" strokeWidth="0.8"/>
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill={`url(#g${idx})`}/>
@@ -165,9 +165,9 @@ export default function HeroSection() {
           marginBottom: 20,
           animation:    'fadeUp 0.7s ease both',
         }}>
-          <div style={{ width:40, height:2, backgroundColor:'#167d82' }}/>
+          <div style={{ width:40, height:2, backgroundColor:' var(--color-primary)' }}/>
           <span style={{
-            color:         '#5ecdd1',
+            color:         'var(--color-primary-light)',
             fontSize:      12,
             fontWeight:    700,
             letterSpacing: '0.3em',
@@ -180,7 +180,7 @@ export default function HeroSection() {
         {/* Heading */}
         <div style={{ marginBottom:24, animation:'fadeUp 0.8s ease 0.1s both' }}>
           <div style={{
-            color:         '#ffffff',
+            color:         'var(--color-text-bright)var(--color-text-bright)',
             fontWeight:    900,
             fontSize:      'clamp(52px, 8vw, 96px)',
             lineHeight:    1.0,
@@ -189,7 +189,7 @@ export default function HeroSection() {
             {SLIDES[current].title1}
           </div>
           <div style={{
-            color:         '#167d82',
+            color:         ' var(--color-primary)',
             fontWeight:    900,
             fontSize:      'clamp(52px, 8vw, 96px)',
             lineHeight:    1.0,
@@ -220,7 +220,7 @@ export default function HeroSection() {
           animation: 'fadeUp 0.8s ease 0.3s both',
         }}>
           <a href="#services" style={{
-            background:     'linear-gradient(135deg, #167d82, #1a9499)',
+            background:     'linear-gradient(135deg,  var(--color-primary), bg-primaryAccent)',
             color:          'white',
             fontWeight:     800,
             fontSize:       13,
@@ -258,8 +258,8 @@ export default function HeroSection() {
             transition:     'all 0.3s',
           }}
           onMouseOver={e => {
-            e.currentTarget.style.borderColor = '#167d82'
-            e.currentTarget.style.color       = '#5ecdd1'
+            e.currentTarget.style.borderColor = ' var(--color-primary)'
+            e.currentTarget.style.color       = 'var(--color-primary-light)'
             e.currentTarget.style.background  = 'rgba(22,125,130,0.1)'
           }}
           onMouseOut={e => {
@@ -287,7 +287,7 @@ export default function HeroSection() {
               <div style={{
                 fontSize:   'clamp(28px,3vw,38px)',
                 fontWeight: 900,
-                color:      '#167d82',
+                color:      ' var(--color-primary)',
                 lineHeight: 1,
                 textShadow: '0 0 20px rgba(22,125,130,0.4)',
               }}>{num}</div>
@@ -325,7 +325,7 @@ export default function HeroSection() {
         }}
         onMouseOver={e => {
           e.currentTarget.style.background    = 'rgba(22,125,130,0.55)'
-          e.currentTarget.style.borderColor   = '#5ecdd1'
+          e.currentTarget.style.borderColor   = 'var(--color-primary-light)'
           e.currentTarget.style.transform     = 'translateY(-50%) scale(1.1)'
         }}
         onMouseOut={e => {
@@ -359,7 +359,7 @@ export default function HeroSection() {
             borderRadius:    4,
             border:          'none',
             cursor:          'pointer',
-            backgroundColor: i===current ? '#167d82' : 'rgba(255,255,255,0.3)',
+            backgroundColor: i===current ? ' var(--color-primary)' : 'rgba(255,255,255,0.3)',
             boxShadow:       i===current ? '0 0 12px rgba(22,125,130,0.7)' : 'none',
             transition:      'all 0.4s ease',
             padding:         0,
@@ -378,7 +378,7 @@ export default function HeroSection() {
         fontWeight:    700,
         letterSpacing: '0.1em',
       }}>
-        <span style={{ color:'#167d82', fontSize:18 }}>
+        <span style={{ color:' var(--color-primary)', fontSize:18 }}>
           {String(current+1).padStart(2,'0')}
         </span>
         {' / '}
@@ -407,7 +407,7 @@ export default function HeroSection() {
         <div style={{
           width:      1,
           height:     40,
-          background: 'linear-gradient(to bottom, #167d82, transparent)',
+          background: 'linear-gradient(to bottom,  var(--color-primary), transparent)',
         }}/>
       </div>
 

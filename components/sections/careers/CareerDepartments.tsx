@@ -38,7 +38,7 @@ export function CareerDepartments() {
         })).filter((item) => item.roles.length > 0)
 
         return (
-          <div key={department.name} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f0f10] to-[#167d82] overflow-hidden">
+         <div key={department.name} className="rounded-2xl border border-white/10 bg-gradient-to-b from-[var(--color-bg-input)] to-[var(--color-primary)] overflow-hidden">
             <button onClick={() => setOpen(isOpen ? null : department.name)} className="w-full flex items-center justify-between px-6 py-5 text-left">
               <div>
                 <h3 className="text-xl font-semibold text-white">{department.name}</h3>
@@ -59,7 +59,7 @@ export function CareerDepartments() {
                             <div key={role.title} className="rounded-lg border border-white/10 bg-white/[0.03] p-4 hover:border-white/20 transition-colors">
                               <h5 className="text-white font-medium">{role.title}</h5>
                               <p className="text-white/70 text-sm mt-1">{role.description}</p>
-                              <button className="mt-3 px-4 py-2 rounded-lg border border-[#c7cbd2]/50 text-[#d9dde3] text-sm hover:bg-white/10 transition-colors">
+                              <button className="mt-3 px-4 py-2 rounded-lg border border-[var(--color-gray-cool)]/50 text-[#d9dde3] text-sm hover:bg-white/10 transition-colors">
                                 Apply
                               </button>
                             </div>

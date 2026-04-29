@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#0a0f1a] text-white m-0 p-0 flex flex-col min-h-screen">
+      <body className="bg-[var(--color-bg-body)] text-white m-0 p-0 flex flex-col min-h-screen">
         
         {/* ✅ Navbar — shows on ALL pages */}
         <Navbar />

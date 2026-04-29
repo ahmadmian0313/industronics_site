@@ -37,7 +37,7 @@ function ServiceCard({ service }: { service: { title: string; desc: string; imag
         </h3>
       </div>
       
-      <p style={{ color: '#000000', fontSize: 14, margin: 0, lineHeight: 1.5 }}>
+      <p style={{ color: 'var(--color-bg-pure-black)', fontSize: 14, margin: 0, lineHeight: 1.5 }}>
         {service.desc}
       </p>
     </div>
@@ -56,8 +56,8 @@ export function Services() {
     >
       <Container>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
-          <h2 style={{ fontSize: '42px', fontWeight: 900, color: '#000000' }}>
-            Our <span style={{ color: '#000000' }}>Core</span> Services
+          <h2 style={{ fontSize: '42px', fontWeight: 900, color: 'var(--color-bg-pure-black)' }}>
+            Our <span style={{ color: 'var(--color-bg-pure-black)' }}>Core</span> Services
           </h2>
         </div>
         

@@ -11,7 +11,7 @@ export function Button({ href, children, style }: ButtonProps) {
     <a
       href={href}
       style={{
-        backgroundColor: '#167d82',
+        backgroundColor: ' var(--color-primary)',
         color: 'white',
         fontWeight: 700,
         padding: '16px 36px',

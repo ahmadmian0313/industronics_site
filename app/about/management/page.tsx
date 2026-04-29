@@ -25,7 +25,7 @@ export default function ManagementPage() {
         <div className="max-w-7xl mx-auto px-6 space-y-12">
           {Object.entries(MANAGEMENT_GROUPS).map(([label, members]) => (
             <div key={label}>
-              <h2 className="text-2xl font-semibold mb-6 text-[#d8dce3]">{label}</h2>
+              <h2 className="text-2xl font-semibold mb-6 text-[var(--color-gray-border)]">{label}</h2>
               {members.length ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {members.map((member) => (

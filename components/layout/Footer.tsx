@@ -9,134 +9,130 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
   
   return (
-    <footer className="text-white border-t border-white/5 shadow-2xl overflow-hidden"
-  style={{
-    background: 'linear-gradient(90deg, #000000 0%, #000000 0%, #000000 0%, #000000 0%)'
-  }}>
-      {/* Main Footer */}
-      <div className="max-w-8x1 mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="inline-block">
-              <div className="font-heading text-2xl font-bold text-white mb-2">
-                Industronics
-              </div>
-              <div className="text-white/60 text-sm">
-                Engineering
-              </div>
-            </Link>
-            <p className="mt-4 text-white/70 text-sm leading-relaxed">
-              {COMPANY.tagline}. Established in 1999, we deliver cutting-edge industrial automation solutions across diverse sectors.
-            </p>
-            <div className="flex items-center gap-4 mt-6">
-              <a
-                href={"https://www.facebook.com/IndustronicsEngineering07"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href={"https://www.instagram.com/industronicsengineering/"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href={"https://pk.linkedin.com/company/industronics-engineering"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+<footer className="text-white border-t border-white/5 shadow-2xl overflow-hidden bg-[#000000]">
+  <div className="max-w-[1870px] mx-auto px-6 py-16">
+    {/* Humne grid-cols-5 use kiya hai taake sab ek hi line mein rahein */}
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-start">
+      
+{/* 1. Industronics (Company Info) */}
+<div className="flex flex-col h-full justify-between">
+  
+  {/* Top Section: Heading and Paragraph */}
+  <div className="space-y-4">
+    <div>
+      <h4 className="text-2xl font-bold text-white leading-none">Industronics</h4>
+      <span className="text-white/60 text-sm">Engineering</span>
+    </div>
+    
+    <p className="text-white/70 text-xs leading-relaxed max-w-[280px]">
+      {COMPANY.tagline}. Industronics Engineering is Automation based company, providing technical services to national and multi-national companies in field of Software development, SCADA & OEE development, Automation & process control, Instrumentation & Calibration and actively delivering supply of industrial automation products and control-process monitoring equipment for the last 25 years with excellence.
+    </p>
+  </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
-              {SERVICES.slice(0, 6).map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/70 text-sm hover:text-accent transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+  {/* Social Icons Section - Pushed to Bottom */}
+  <div className="flex items-center gap-4 mt-10 lg:mt-auto">
+    <a
+      href="https://www.facebook.com/IndustronicsEngineering07"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors group"
+      aria-label="Facebook"
+    >
+      <Facebook className="w-5 h-5 text-white/70 group-hover:text-white" />
+    </a>
+    <a
+      href="https://www.instagram.com/industronicsengineering/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors group"
+      aria-label="Instagram"
+    >
+      <Instagram className="w-5 h-5 text-white/70 group-hover:text-white" />
+    </a>
+    <a
+      href="https://pk.linkedin.com/company/industronics-engineering"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors group"
+      aria-label="LinkedIn"
+    >
+      <Linkedin className="w-5 h-5 text-white/70 group-hover:text-white" />
+    </a>
+  </div>
+</div>
 
-          {/* Solutions */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Solutions</h4>
-            <ul className="space-y-2">
-              {SOLUTIONS.slice(0, 7).map((solution) => (
-                <li key={solution}>
-                  
-                  <span className="text-white/70 text-sm">{solution}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-              
-          {/* Contact */}
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={`tel:${COMPANY.phone1}`}
-                  className="flex items-start gap-3 text-white/70 text-sm hover:text-accent transition-colors"
-                >
-                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span>{COMPANY.phone1}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${COMPANY.email}`}
-                  className="flex items-start gap-3 text-white/70 text-sm hover:text-accent transition-colors"
-                >
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span>{COMPANY.email}</span>
-                </a>
-              </li>
-              <li>
-                <div className="flex items-start gap-3 text-white/70 text-sm">
-                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-medium text-white">Karachi</div>
-                    <div className="text-white/60">{COMPANY.offices.karachi.address}</div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-3 text-white/70 text-sm">
-                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-medium text-white">Lahore</div>
-                    <div className="text-white/60">{COMPANY.offices.lahore.address}</div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+      {/* 2. Solutions Column 1 */}
+      <div>
+        <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-6">Solutions</h4>
+        <ul className="space-y-2">
+          {SOLUTIONS.slice(0, 14).map((item) => (
+            <li key={item} className="text-[13px] text-white/70 hover:text-primary transition-all cursor-pointer">
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      {/* 3. Solutions Column 2 */}
+      <div>
+        <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-6">Solutions</h4>
+        <ul className="space-y-2">
+          {SOLUTIONS.slice(14).map((item) => (
+            <li key={item} className="text-[13px] text-white/70 hover:text-primary transition-all cursor-pointer">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* 4. Services (Placed after Solutions) */}
+      <div>
+        <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-6">Services</h4>
+        <ul className="space-y-3">
+          {SERVICES.map((service) => (
+            <li key={service.slug}>
+              <Link href={`/services/${service.slug}`} className="text-[13px] text-white/70 hover:text-primary transition-all">
+                {service.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* 5. Contact (Last Column) */}
+      <div className="space-y-6">
+        <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-6">Contact</h4>
+        <ul className="space-y-4 text-[13px] text-white/70">
+          <li className="flex items-start gap-3">
+            <Phone className="w-4 h-4 text-primary shrink-0" />
+            <span>{COMPANY.phone1}</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <Mail className="w-4 h-4 text-primary shrink-0" />
+            <span className="break-all">{COMPANY.email}</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <MapPin className="w-4 h-4 text-primary shrink-0" />
+            <div>
+              <p className="font-bold text-white mb-1">Karachi</p>
+              <p className="text-xs leading-tight">{COMPANY.offices.karachi.address}</p>
+            </div>
+          </li>
+          <li className="flex items-start gap-3">
+            <MapPin className="w-4 h-4 text-primary shrink-0" />
+            <div>
+              <p className="font-bold text-white mb-1">Lahore</p>
+              <p className="text-xs leading-tight">{COMPANY.offices.lahore.address}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  
+  {/* Bottom Bar remains the same */}
+<div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-white/50 text-sm">
@@ -153,6 +149,13 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+
+
+  
+</footer>
   )
 }
+
+
+    // {/* Bottom Bar */}
+      

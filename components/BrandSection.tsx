@@ -23,12 +23,12 @@ const brands = [
   { name: "Brookes", logo: "/clients/client18.png" },
   { name: "Candyland", logo: "/clients/client19.png" },
   { name: "Clariant", logo: "/clients/client20.png" },
-  // { name: "English Biscuit Manufacturers", logo: "/clients/client21.png" },
+
   { name: "GSK", logo: "/clients/client22.png" },
   { name: "Gul Ahmed", logo: "/clients/client23.png" },
   { name: "Hilal", logo: "/clients/client24.png" },
   { name: "Kasim Textile", logo: "/clients/client25.png" },
-  { name: "KCCI", logo: "/clients/client26.png" },
+ 
   { name: "KE", logo: "/clients/client27.png" },
   { name: "Lucky Core", logo: "/clients/client28.png" },
   { name: "Master Textile", logo: "/clients/client29.png" },
@@ -43,9 +43,9 @@ const brands = [
   { name: "P&G", logo: "/clients/client38.png" },
   { name: "Parco", logo: "/clients/client39.png" },
   { name: "PCICL", logo: "/clients/client40.png" },
-  // { name: "Popular", logo: "/clients/client41.png" },
+
   { name: "Popular Group", logo: "/clients/client42.png" },
-  { name: "PSEB", logo: "/clients/client43.png" },
+  
   { name: "R&M", logo: "/clients/client44.png" },
   { name: "Sanofi", logo: "/clients/client45.png" },
   { name: "Scada Industries", logo: "/clients/client46.png" },
@@ -62,6 +62,27 @@ const brands = [
      { name: "KIA", logo: "/clients/client57.png" },
        { name: "ToYOTA", logo: "/clients/client58.png" },
         { name: "DAWN", logo: "/clients/client59.png" },
+           { name: "DAWN", logo: "/clients/64.png" },
+              { name: "DAWN", logo: "/clients/65.png" },
+                 { name: "DAWN", logo: "/clients/66.png" },
+                    { name: "DAWN", logo: "/clients/67.png" },
+                       { name: "DAWN", logo: "/clients/68.png" },
+                          { name: "DAWN", logo: "/clients/69.png" },
+                             { name: "DAWN", logo: "/clients/70.png" },
+                                { name: "DAWN", logo: "/clients/71.png" },
+                                   { name: "DAWN", logo: "/clients/72.png" },
+                                      { name: "DAWN", logo: "/clients/73.png" },
+                                         { name: "DAWN", logo: "/clients/74.png" },
+                                      { name: "DAWN", logo: "/clients/75.png" },
+
+                                         { name: "DAWN", logo: "/clients/76.png" },
+                                         
+   { name: "DAWN", logo: "/clients/77.png" },
+      { name: "DAWN", logo: "/clients/78.png" },
+         { name: "DAWN", logo: "/clients/79.png" },
+            { name: "DAWN", logo: "/clients/80.png" },
+          
+               
 ];
 
 // Adjust spacing between logos here (pixels)
@@ -165,7 +186,7 @@ const BrandSection = () => {
           right: 0; top: 0; bottom: 0;
           width: 120px;
           /* Change this color to match your BOX background */
-          background: linear-gradient(to left, #ffffff, transparent);
+          background: linear-gradient(to left, var(--color-text-bright), transparent);
           z-index: 2;
           pointer-events: none;
         }
@@ -192,23 +213,9 @@ const BrandSection = () => {
 
         <div style={{ maxWidth: "1900px", margin: "0 auto", position: "relative", zIndex: 25 }}>
 
-          {/*
-           * ┌──────────────────────────────────────────────────────┐
-           * │  LOGO BOX BACKGROUND — change ONLY this one value:   │
-           * │                                                        │
-           * │  background: "#000000"   ← pure black (current)      │
-           * │  background: "#0d1117"   ← very dark navy            │
-           * │  background: "#ffffff"   ← white (use black logos)   │
-           * │  background: "#f5f5f5"   ← light grey                │
-           * │                                                        │
-           * │  If you change to a light color:                      │
-           * │   1. Change heading color to #000000                  │
-           * │   2. Change logo filter to brightness(0)              │
-           * │   3. Change fade gradient color to match this bg      │
-           * └──────────────────────────────────────────────────────┘
-           */}
+          
           <div style={{
-            background: "linear-gradient(#e7e3e3 100%, #e2e2e2 100%,  #000000 10% #e7e3e3 100%, #e2e2e2 100%,  #000000 10% )",
+            background: "linear-gradient(#e7e3e3 100%, #e2e2e2 100%,  var(--color-bg-pure-black) 10% #e7e3e3 100%, #e2e2e2 100%,  var(--color-bg-pure-black) 10% )",
             borderRadius: "30px",
             border: "1px solid rgba(255, 255, 255, 0.12)",
             padding: "60px 40px",
@@ -218,18 +225,18 @@ const BrandSection = () => {
 
             {/*
              * HEADING COLOR:
-             * Dark box  → color: "#ffffff"  (current — white)
-             * Light box → color: "#000000"  (black)
+         
+          
              */}
             <h2 style={{
-              color: "#000000",
+              color: "var(--color-bg-pure-black)",
               fontSize: "29px",
               fontWeight: "700",
               marginBottom: "50px",
               letterSpacing: "0.5px",
             }}>
-              The world&apos;s leading brands are powered by{" "}
-              <span style={{ color: "#000000" }}>Industronics</span>
+              Industronics powers the operational backbone of modern companies{" "}
+              <span style={{ color: "var(--color-bg-pure-black)" }}></span>
             </h2>
 
             {/* Marquee container */}
@@ -295,10 +302,10 @@ const BrandSection = () => {
           </div>
         </div>
 
-        {/* Subtle teal grid — purely decorative */}
+        Subtle teal grid — purely decorative
         <div style={{
           position: "absolute", inset: 0, opacity: 0.05, pointerEvents: "none",
-          backgroundImage: "linear-gradient(#167d82 1px, transparent 1px), linear-gradient(90deg, #167d82 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(var(--color-primary) 1px, transparent 1px), linear-gradient(90deg,  var(--color-primary) 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }} />
       </div>

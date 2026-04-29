@@ -34,7 +34,20 @@ export const COMPANY = {
     linkedin: 'https://linkedin.com/company/industronics',
   },
 } as const
-
+export const TECHNICAL_OFFERINGS = [
+  { title: 'Industrial Automation', slug: 'industrial-automation' },
+  { title: 'EPC Solutions', slug: 'epc-solutions' },
+  { title: 'BMS Integration', slug: 'bms-integration' },
+  { title: 'Electrical Panels', slug: 'electrical-panels' },
+  { title: 'Instrumentation', slug: 'instrumentation' },
+  { title: 'Mechanical Fabrication', slug: 'mechanical-fabrication' },
+  { title: 'Software Development', slug: 'software-development' },
+  { title: 'System Integration', slug: 'system-integration' },
+  { title: 'Process Optimization', slug: 'process-optimization' },
+  { title: 'Industry 4.0 Solutions', slug: 'industry-4-0' },
+  { title: 'Machine Sourcing', slug: 'machine-sourcing' },
+  { title: 'Maintenance & Support', slug: 'maintenance-support' }
+];
 export const SERVICES = [
   {
     id: 1,
@@ -167,32 +180,27 @@ export const SERVICES = [
 ] as const
 
 export const SOLUTIONS = [
-  'Flow Metering',
-  'Energy Monitoring',
-  'Warehouse Management',
-  'SCADA & OEE',
-  'pH Monitoring',
-  'Chemical Dosing',
-  'Web Tension Control',
-  'Humidity Control',
-  'Switch Gear & Panels',
-  'Process Monitoring',
-  'AS/RS Systems',
-  'Weft Straightener',
-    'Flow Metering',
-  'Energy Monitoring',
-  'Warehouse Management',
-  'SCADA & OEE',
-  'pH Monitoring',
-  'Chemical Dosing',
-  'Web Tension Control',
-  'Humidity Control',
-  'Switch Gear & Panels',
-  'Process Monitoring',
-  'AS/RS Systems',
-  'Weft Straightener',
-  
-] as const
+  'Energy Monitoring & Management System',
+  'SCADA & OEE Monitoring System',
+  'Process Monitoring & Control System',
+  'Warehouse Management System (WMS)',
+  'Warehouse Control System (WCS)',
+  'AS/RS (Automated Storage & Retrieval System)',
+  'Production Management & Costing System',
+  'Fuel Tank Management System',
+  'Chemical Dosing Automation System',
+  'pH & ORP Monitoring and Control System',
+  'Flow Monitoring & Metering System',
+  'Humidity & Moisture Control System',
+  'Web Tension & Weighing Control System',
+  'Weft Straightening System',
+  'Building Management System (BMS)',
+  'Industrial Automation System',
+  'Business Management System (ERP/Custom)',
+  'Industrial IoT & Smart Monitoring System',
+  'Sanitizing & Disinfection Automation System',
+  'Baume Measurement & Control System'
+]as const
 
 export const STATS = [
   { label: 'Years Experience', value: 25, suffix: '+' },

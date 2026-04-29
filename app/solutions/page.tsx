@@ -11,31 +11,31 @@ const SOLUTIONS_DATA = [
     title: "Building Management", 
     desc: "Automated HVAC and lighting control for smart infrastructures.", 
     imgSrc: "/solutions/sol1.png",
-    color: "#ffffff" 
+    color: "var(--color-text-bright)" 
   },
   { 
     title: "Energy Monitoring", 
     desc: "Real-time tracking of power usage to reduce operational costs.", 
     imgSrc: "/solutions/sol2.png", 
-    color: "#b8bec7" 
+    color: "var(--color-text-gray-1)" ,
   },
   { 
     title: "Flow Metering", 
     desc: "Precision liquid and gas flow  t for industrial pipes.", 
     imgSrc: "/solutions/sol3.png", 
-    color: "#aeb5bf" 
+    color: "var(--color-text-gray-2)" 
   },
   { 
     title: "E.P.C Contracts", 
     desc: "End-to-end Engineering, Procurement, and Construction services.", 
     imgSrc: "/solutions/sol4.png", 
-    color: "#d5d9df" 
+    color: "var(--color-text-gray-3)" 
   },
   { 
     title: "Process Monitoring", 
     desc: "Visual tracking of production stages for quality assurance.", 
     imgSrc: "/solutions/sol5.png", 
-    color: "#aeb5bf" 
+    color: "var(--color-text-gray-2)" 
   },
   { 
     title: "Web Tension Control", 
@@ -47,25 +47,26 @@ const SOLUTIONS_DATA = [
     title: "pH Monitoring", 
     desc: "Automated chemical balance testing for water treatment.", 
     imgSrc: "/solutions/sol7.png", 
-    color: "#bcc2cb" 
+    color: "var(--color-text-gray-4)" 
   },
   { 
     title: "Weft Straightener", 
     desc: "Advanced fabric alignment systems for textile processing.", 
     imgSrc: "/solutions/sol8.png", 
-    color: "#d0d4db" 
+    color: "var(--color-text-gray-5)" ,
   },
   { 
     title: "Moister Control", 
     desc: "Humidity and moisture regulation for raw material storage.", 
     imgSrc: "/solutions/sol9.png", 
-    color: "#a7aeb8" 
+    color: "var(--color-text-gray-6)",
+
   },
   { 
     title: "Warehouse Management", 
     desc: "Inventory automation and real-time tracking solutions.", 
     imgSrc: "/solutions/sol10.png", 
-    color: "#d1d5dc" 
+    color: "var(--color-text-gray-7)" ,
   },
   { 
     title: "Warehouse Control", 

@@ -72,7 +72,7 @@ function ProductCard({ product, onClick }: { product: WooProduct; onClick: () =>
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: '#0e0e0e',
+        background: 'var(--color-bg-dark-surface)',
         border: `1px solid ${hovered ? '#2a2a2a' : '#1a1a1a'}`,
         borderRadius: 14,
         overflow: 'hidden',
@@ -84,7 +84,7 @@ function ProductCard({ product, onClick }: { product: WooProduct; onClick: () =>
     >
       <div style={{
         width: '100%', aspectRatio: '1 / 1',
-        background: '#141414',
+        background: "var(--color-bg-soft)",
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         overflow: 'hidden',
       }}>
@@ -109,7 +109,7 @@ function ProductCard({ product, onClick }: { product: WooProduct; onClick: () =>
       </div>
       <div style={{ padding: '11px 13px 14px' }}>
         <p style={{
-          color: hovered ? '#ffffff' : '#d0d0d0',
+          color: hovered ? 'var(--color-text-bright)' : '#d0d0d0',
           fontSize: 12, fontWeight: 600,
           lineHeight: 1.45, margin: 0,
           display: '-webkit-box',
@@ -157,11 +157,11 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
   const inputStyle = (field: string): React.CSSProperties => ({
     width: '100%',
     background: focused === field ? 'rgba(22,125,130,0.08)' : 'rgba(255,255,255,0.04)',
-    border: `1px solid ${errors[field as keyof QueryForm] ? '#ff4444' : focused === field ? 'rgba(22,125,130,0.6)' : 'rgba(255,255,255,0.1)'}`,
+    border: `1px solid ${errors[field as keyof QueryForm] ? 'var(--color-error)' : focused === field ? 'rgba(22,125,130,0.6)' : 'rgba(255,255,255,0.1)'}`,
     borderRadius: 10,
     padding: '12px 14px',
     fontSize: 13,
-    color: '#e0e0e0',
+    color: 'var(--color-gray-light)',
     outline: 'none',
     fontFamily: 'inherit',
     transition: 'all 0.2s',
@@ -182,7 +182,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div style={{ marginBottom: 4 }}>
-        <div style={{ fontSize: 11, color: '#5ecdd1', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>
+        <div style={{ fontSize: 11, color: 'var(--color-primary-light)', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>
           Send Query
         </div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', fontStyle: 'italic' }}>
@@ -202,7 +202,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
             onBlur={() => setFocused(null)}
             style={inputStyle('name')}
           />
-          {errors.name && <span style={{ fontSize: 10, color: '#ff4444', marginTop: 3, display: 'block' }}>{errors.name}</span>}
+          {errors.name && <span style={{ fontSize: 10, color: 'var(--color-error)', marginTop: 3, display: 'block' }}>{errors.name}</span>}
         </div>
         <div>
           <label style={labelStyle}>Phone *</label>
@@ -215,7 +215,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
             onBlur={() => setFocused(null)}
             style={inputStyle('phone')}
           />
-          {errors.phone && <span style={{ fontSize: 10, color: '#ff4444', marginTop: 3, display: 'block' }}>{errors.phone}</span>}
+          {errors.phone && <span style={{ fontSize: 10, color: 'var(--color-error)', marginTop: 3, display: 'block' }}>{errors.phone}</span>}
         </div>
       </div>
 
@@ -230,7 +230,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
           onBlur={() => setFocused(null)}
           style={inputStyle('email')}
         />
-        {errors.email && <span style={{ fontSize: 10, color: '#ff4444', marginTop: 3, display: 'block' }}>{errors.email}</span>}
+        {errors.email && <span style={{ fontSize: 10, color: 'var(--color-error)', marginTop: 3, display: 'block' }}>{errors.email}</span>}
       </div>
 
       <div>
@@ -244,7 +244,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
           onBlur={() => setFocused(null)}
           style={inputStyle('message')}
         />
-        {errors.message && <span style={{ fontSize: 10, color: '#ff4444', marginTop: 3, display: 'block' }}>{errors.message}</span>}
+        {errors.message && <span style={{ fontSize: 10, color: 'var(--color-error)', marginTop: 3, display: 'block' }}>{errors.message}</span>}
       </div>
 
       <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
@@ -268,7 +268,7 @@ function QueryForm({ productName, onClose }: { productName: string; onClose: () 
           onClick={handleSubmit}
           style={{
             flex: 2, padding: '13px 0',
-            background: 'linear-gradient(135deg, #25D366, #128C7E)',
+            background: 'linear-gradient(135deg, var(--color-primary), var(--color-whatsapp-dark))',
             border: 'none', borderRadius: 10,
             color: '#fff', fontSize: 12, fontWeight: 800,
             cursor: 'pointer', fontFamily: 'inherit',
@@ -321,7 +321,7 @@ function ProductModal({ product, onClose }: { product: WooProduct; onClose: () =
         style={{
           flex: 1,
           padding: '12px 0',
-          background: 'linear-gradient(135deg, #25D366, #128C7E)',
+          background: 'linear-gradient(135deg, var(--color-primary), var(--color-whatsapp-dark))',
           border: 'none',
           borderRadius: 10,
           color: 'white',
@@ -414,14 +414,13 @@ export default function ProductsPage() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full" />
         
         {/* Grid Pattern Theme */}
-        <div 
-          className="absolute inset-0 opacity-[0.05]" 
-          style={{ 
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgb(255, 255, 255) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} 
-        />
+    <div 
+  className="absolute inset-0 opacity-[0.05]" 
+  style={{ 
+    backgroundImage: `var(--pattern-grid)`,
+    backgroundSize: '50px 50px'
+  }} 
+/>
       </div>
 
       <div className="relative z-10 w-full px-6 md:px-12 py-16">
@@ -441,7 +440,7 @@ export default function ProductsPage() {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search components (e.g. Siemens, PLC, Sensor)..."
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-16 pr-8 text-lg focus:border-[#167d82] outline-none transition-all backdrop-blur-md"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-16 pr-8 text-lg focus:border-[var(--color-primary)] outline-none transition-all backdrop-blur-md"
             />
           </form>
         </AnimatedSection>
@@ -458,7 +457,7 @@ export default function ProductsPage() {
          
 
             {loadingCats ? (
-              <div style={{ color: 'rgba(255, 255, 255, 0.25)', fontSize: 12 }}>Loading categories...</div>
+              <div style={{ color: 'var(--glass-white-25)', fontSize: 12 }}>Loading categories...</div>
             ) : (
               <div style={{
                 display: 'flex', flexWrap: 'wrap', gap: 8,
@@ -469,13 +468,13 @@ export default function ProductsPage() {
                   style={{
                     padding: '8px 16px', borderRadius: 50, fontSize: 11, fontWeight: 700,
                     cursor: 'pointer', transition: 'all 0.2s', whiteSpace: 'nowrap',
-                    background: selectedCat === null ? '#167d82' : 'rgba(0,0,0,0.4)',
-                    border: selectedCat === null ? '1px solid #167d82' : '1px solid rgba(255,255,255,0.1)',
+                    background: selectedCat === null ? 'var(--color-primary)' : 'rgba(0,0,0,0.4)',
+                    border: selectedCat === null ? '1px solid  var(--color-primary)' : '1px solid rgba(255,255,255,0.1)',
                     color: selectedCat === null ? '#fff' : 'rgba(255,255,255,0.55)',
                     letterSpacing: '0.04em',
                     boxShadow: selectedCat === null ? '0 0 16px rgba(22,125,130,0.4)' : 'none',
                   }}
-                  onMouseEnter={e => { if (selectedCat !== null) { e.currentTarget.style.borderColor = '#167d82'; e.currentTarget.style.color = '#5ecdd1' } }}
+                  onMouseEnter={e => { if (selectedCat !== null) { e.currentTarget.style.borderColor = 'var(--color-primary)'; e.currentTarget.style.color = 'var(--color-primary-light)' } }}
                   onMouseLeave={e => { if (selectedCat !== null) { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.55)' } }}
                 >
                   All Products
@@ -487,13 +486,13 @@ export default function ProductsPage() {
                     style={{
                       padding: '8px 16px', borderRadius: 50, fontSize: 11, fontWeight: 700,
                       cursor: 'pointer', transition: 'all 0.2s', whiteSpace: 'nowrap',
-                      background: selectedCat === cat.id ? '#167d82' : 'rgba(0,0,0,0.4)',
-                      border: selectedCat === cat.id ? '1px solid #167d82' : '1px solid rgba(255,255,255,0.1)',
+                      background: selectedCat === cat.id ? 'var(--color-primary)' : 'rgba(0,0,0,0.4)',
+                      border: selectedCat === cat.id ? '1px solid  var(--color-primary)' : '1px solid rgba(255,255,255,0.1)',
                       color: selectedCat === cat.id ? '#fff' : 'rgba(255,255,255,0.55)',
                       letterSpacing: '0.04em',
                       boxShadow: selectedCat === cat.id ? '0 0 16px rgba(22,125,130,0.4)' : 'none',
                     }}
-                    onMouseEnter={e => { if (selectedCat !== cat.id) { e.currentTarget.style.borderColor = '#167d82'; e.currentTarget.style.color = '#5ecdd1' } }}
+                    onMouseEnter={e => { if (selectedCat !== cat.id) { e.currentTarget.style.borderColor = 'var(--color-primary)'; e.currentTarget.style.color = 'var(--color-primary-light)' } }}
                     onMouseLeave={e => { if (selectedCat !== cat.id) { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.55)' } }}
                   >
                     {cat.name}
@@ -509,9 +508,9 @@ export default function ProductsPage() {
           {/* PRODUCTS */}
           <section>
             <div style={{
-              fontSize: 10, fontWeight: 700, color: '#c8cdd4',
+              fontSize: 10, fontWeight: 700, color: 'var(--color-gray-metallic)',
               letterSpacing: '0.5em', textTransform: 'uppercase',
-              marginBottom: 20, borderLeft: '3px solid #c8cdd4', paddingLeft: 14,
+              marginBottom: 20, borderLeft: '3px solid var(--color-gray-metallic)', paddingLeft: 14,
             }}>
               {selectedCat
                 ? categories.find((c: WooCategory) => c.id === selectedCat)?.name ?? 'Products'
@@ -519,7 +518,7 @@ export default function ProductsPage() {
             </div>
 
             {error && (
-              <div style={{ color: '#ff6b6b', fontSize: 13, marginBottom: 20, padding: '12px 16px', background: 'rgba(255,0,0,0.07)', borderRadius: 8, border: '1px solid rgba(255,0,0,0.18)' }}>
+              <div style={{ color: 'var(--color-error-alt)', fontSize: 13, marginBottom: 20, padding: '12px 16px', background: 'rgba(255,0,0,0.07)', borderRadius: 8, border: '1px solid rgba(255,0,0,0.18)' }}>
                 {error}
               </div>
             )}
@@ -571,8 +570,8 @@ export default function ProductsPage() {
                   return (
                     <button key={p} onClick={() => setPage(p)} style={{
                       width: 38, height: 38, borderRadius: '50%',
-                      border: page === p ? '1px solid #167d82' : '1px solid rgba(255,255,255,0.1)',
-                      background: page === p ? '#167d82' : 'rgba(0,0,0,0.4)',
+                      border: page === p ? '1px solid  var(--color-primary)' : '1px solid rgba(255,255,255,0.1)',
+                      background: page === p ? 'var(--color-primary)' : 'rgba(0,0,0,0.4)',
                       color: '#fff', cursor: 'pointer', fontSize: 12, fontWeight: 700,
                       boxShadow: page === p ? '0 0 14px rgba(22,125,130,0.45)' : 'none',
                       transition: 'all 0.2s',
